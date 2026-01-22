@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:layout_gravity="center_vertical"
-                android:text="Al-Quran উচ্চারণ ও অর্থসহ"
+                android:text="AL-QURAN উচ্চারণ ও অর্থসহ"
                 android:textColor="?accent"
                 android:textSize="24sp"/>
 
@@ -63,7 +63,7 @@
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo1"
             android:layout_gravity="center"/>
 
         <View
@@ -87,7 +87,7 @@
                 android:text="Made with "
                 android:textSize="18sp"
                 android:letterSpacing=".15"
-                android:textColor="?blackWhite" />
+                android:textColor="@color/black" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -110,8 +110,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By Al Rakib Sorder"
-            android:textColor="?blackWhite"
+            android:text="REZWAN AHMED RAJ"
+            android:textColor="@color/purple"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/comfortaa_bold"
             android:textSize="20sp"/>
@@ -125,7 +125,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Follow us on social media"
+            android:text="Connect with us"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:textStyle="bold"
@@ -148,7 +148,7 @@
                     android:layout_width="40dp"
                     android:layout_gravity="center"
                     android:layout_height="40dp"
-                    app:tint="#1DA1F2"
+                    app:tint="#0D47A1"
                     android:src="@drawable/ic_facebook"/>
 
             </FrameLayout>
@@ -165,6 +165,7 @@
                     android:layout_width="40dp"
                     android:layout_gravity="center"
                     android:layout_height="40dp"
+                    app:tint="#CE1B58"
                     android:src="@drawable/ic_instagram"/>
 
             </FrameLayout>
@@ -210,7 +211,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact Us"
+            android:text="Talk to Us"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:textStyle="bold"
@@ -235,7 +236,7 @@
                     android:layout_width="36dp"
                     android:layout_gravity="center"
                     android:layout_height="36dp"
-                    app:tint="?blackWhite"
+                    app:tint="#C33232"
                     android:src="@drawable/email_about"/>
 
             </FrameLayout>
@@ -252,7 +253,7 @@
                     android:layout_width="36dp"
                     android:layout_gravity="center"
                     android:layout_height="36dp"
-                    app:tint="#1DA1F2"
+                    app:tint="#0D47A1"
                     android:src="@drawable/ic_baseline_call_24"/>
 
             </FrameLayout>

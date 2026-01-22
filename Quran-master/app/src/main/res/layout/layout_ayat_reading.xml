@@ -31,6 +31,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="@dimen/_12sdp"
+            android:backgroundTint="@color/orange"
             android:background="@drawable/count_background"/>
 
         <TextView
@@ -53,7 +54,7 @@
             app:layout_constraintEnd_toStartOf="@id/play"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="?accent"
+            app:tint="@color/orange"
             android:background="@drawable/about_background"
             android:clickable="true"
             android:focusable="true"
@@ -72,7 +73,7 @@
             app:layout_constraintEnd_toStartOf="@id/bookmark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="?accent"
+            app:tint="@color/orange"
             android:background="@drawable/about_background"
             android:padding="@dimen/_6sdp"
             android:clickable="true"
@@ -88,7 +89,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="?accent"
+            app:tint="@color/orange"
             android:background="@drawable/about_background"
             android:padding="@dimen/_6sdp"
             android:clickable="true"
@@ -107,7 +108,7 @@
         android:layout_marginTop="@dimen/_6sdp"
         android:textSize="@dimen/_22sdp"
         android:fontFamily="@font/al_qalam"
-        android:textColor="?blackWhite"
+        android:textColor="#2D712D"
         android:layout_marginStart="@dimen/_12sdp"/>
 
     <TextView
@@ -121,7 +122,7 @@
         android:paddingBottom="@dimen/_8sdp"
         android:background="?translitaration"
         android:fontFamily="@font/hind_siliguri"
-        android:textColor="?accent"
+        android:textColor="@color/purple"
         android:textSize="@dimen/_14sdp" />
 
     <TextView
@@ -132,7 +133,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:textSize="@dimen/_14sdp"
         android:fontFamily="@font/hind_siliguri"
-        android:textColor="?blackWhite"
+        android:textColor="#2D712D"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="@dimen/_12sdp"/>
 

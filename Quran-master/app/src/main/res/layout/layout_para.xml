@@ -17,9 +17,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_14sdp"
-        android:textColor="?blackWhite"
+        android:textColor="@color/purple"
         android:gravity="center"
         android:fontFamily="@font/open_sans_semibold"
+        android:backgroundTint="@color/orange"
         android:background="@drawable/count"/>
 
     <LinearLayout
@@ -38,13 +39,14 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/_14sdp"
             android:fontFamily="@font/poppins_semibold"
-            android:textColor="?surahName"/>
+            android:textColor="#2D712D"/>
 
         <TextView
             android:id="@+id/from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_10sdp"
+            android:textColor="#6E856E"
             android:layout_marginTop="@dimen/_minus1sdp" />
 
     </LinearLayout>

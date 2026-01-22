@@ -20,7 +20,7 @@
         android:visibility="gone"
         android:textSize="@dimen/_24sdp"
         android:fontFamily="@font/open_sans_semibold"
-        android:textColor="@color/purple"
+        android:textColor="#2D712D"
         android:layout_gravity="center"
         android:elevation="2dp"/>
 

@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="@dimen/_6sdp"
-        app:tint="?blackWhite"
+        app:tint="@color/purple"
         android:layout_margin="@dimen/_6sdp"
         android:src="@drawable/ic_baseline_keyboard_backspace_24"/>
 

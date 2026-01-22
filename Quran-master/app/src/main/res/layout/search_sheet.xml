@@ -41,7 +41,7 @@
             android:layout_width="@dimen/_34sdp"
             android:layout_height="@dimen/_34sdp"
             android:layout_marginEnd="@dimen/_12sdp"
-            app:tint="?blackWhite"
+            app:tint="@color/purple"
             android:padding="@dimen/_8sdp"
             android:elevation="2dp"
             android:clickable="true"
@@ -70,8 +70,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Surah"
+                android:textColor="#1AC5B4"
                 android:checked="true"
-                android:buttonTint="?accent"
+                android:buttonTint="@color/orange"
                 android:textSize="@dimen/_12sdp"/>
 
             <RadioButton
@@ -79,8 +80,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ayat"
+                android:textColor="#1AC5B4"
                 android:textSize="@dimen/_12sdp"
-                android:buttonTint="?accent"
+                android:buttonTint="@color/orange"
                 android:layout_marginStart="@dimen/_10sdp"/>
 
             <RadioButton
@@ -88,8 +90,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Meaning"
+                android:textColor="#1AC5B4"
                 android:textSize="@dimen/_12sdp"
-                android:buttonTint="?accent"
+                android:buttonTint="@color/orange"
                 android:layout_marginStart="@dimen/_10sdp"/>
 
         </RadioGroup>

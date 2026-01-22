@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:padding="@dimen/_6sdp"
-        app:tint="?blackWhite"
+        app:tint="@color/purple"
         android:layout_margin="@dimen/_6sdp"
         android:src="@drawable/ic_baseline_keyboard_backspace_24"/>
 
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/language"
-        android:textColor="?blackWhite"
+        android:textColor="@color/purple"
         android:fontFamily="@font/poppins_bold"
         android:textSize="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_2sdp"
@@ -48,8 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="English"
+            android:textColor="#2D712D"
             android:textSize="@dimen/_14sdp"
-            app:buttonTint="?accent"
+            app:buttonTint="@color/orange"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:paddingStart="@dimen/_16sdp"/>
@@ -59,8 +60,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bangla"
+            android:textColor="#2D712D"
             android:textSize="@dimen/_14sdp"
-            app:buttonTint="?accent"
+            app:buttonTint="@color/orange"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:paddingStart="@dimen/_16sdp"/>
@@ -70,8 +72,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Turkish"
+            android:textColor="#2D712D"
             android:textSize="@dimen/_14sdp"
-            app:buttonTint="?accent"
+            app:buttonTint="@color/orange"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:paddingStart="@dimen/_16sdp"/>

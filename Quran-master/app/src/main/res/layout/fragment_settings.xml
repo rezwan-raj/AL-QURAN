@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.Settings"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alim Sourav"
+                    android:text="Rezwan Ahmed"
                     android:layout_marginStart="16dp"
                     android:textSize="20sp"
                     android:textColor="@color/white"
@@ -66,7 +66,7 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="sourav.0.alim@gmail.com"
+                    android:text="rezwanahmedraj7@gmail.com"
                     android:layout_marginStart="16dp"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toEndOf="@id/profile"
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Theme"
-            android:textColor="#221E27"
+            android:textColor="#2D712D"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="16dp"
             android:layout_marginStart="24dp"
@@ -101,13 +101,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_nightlight"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Dark Mode"
+                android:text="Night Mode"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/poppins_semibold"
@@ -118,10 +119,12 @@
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -148,6 +151,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_color_lens"/>
 
             <TextView
@@ -266,6 +270,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_code"/>
 
             <TextView
@@ -294,8 +299,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AL Quran"
-            android:textColor="#221E27"
+            android:text="AL-QURAN"
+            android:textColor="#2D712D"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="24dp"
             android:layout_marginStart="24dp"
@@ -315,6 +320,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_quran"
                 app:tint="?attr/colorControlNormal"/>
 
@@ -389,6 +395,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_text_snippet"/>
 
             <TextView
@@ -436,6 +443,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_translate"/>
 
             <TextView
@@ -533,6 +541,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_font_download"/>
 
             <TextView
@@ -558,6 +567,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@drawable/rounded_back"
+                android:tint="@color/purple"
                 android:foreground="?selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -712,7 +722,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Application"
-            android:textColor="#221E27"
+            android:textColor="#2D712D"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="24dp"
             android:layout_marginStart="24dp"
@@ -732,6 +742,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_mail"/>
 
             <TextView
@@ -776,6 +787,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:tint="@color/purple"
                 android:src="@drawable/ic_info"/>
 
             <TextView

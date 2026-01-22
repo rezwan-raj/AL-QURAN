@@ -93,7 +93,7 @@
                     android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_18sdp"
                     android:layout_marginBottom="@dimen/_18sdp"
-                    android:src="@drawable/bismillah"/>
+                    android:src="@drawable/bismillah1"/>
 
             </LinearLayout>
 
