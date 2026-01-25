@@ -58,7 +58,7 @@
                     android:layout_marginStart="16dp"
                     android:textSize="20sp"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/fredoka_one"
+                    android:fontFamily="@font/fre_doka_one_o_n_e"
                     app:layout_constraintStart_toEndOf="@id/profile"
                     app:layout_constraintTop_toTopOf="@id/profile"/>
 
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:text="Theme"
             android:textColor="#2D712D"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
             android:layout_marginTop="16dp"
             android:layout_marginStart="24dp"
             android:textSize="20sp"/>
@@ -111,7 +111,7 @@
                 android:text="Night Mode"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/dark_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -161,7 +161,7 @@
                 android:text="Primary Color"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/color_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -183,7 +183,7 @@
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
                     android:backgroundTint="@color/purple"
-                    android:background="@drawable/rounded_back">
+                    android:background="@drawable/rounded_ba_c_k_back">
 
                     <ImageView
                         android:id="@+id/green_check"
@@ -206,7 +206,7 @@
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
                     android:backgroundTint="@color/blue"
-                    android:background="@drawable/rounded_back">
+                    android:background="@drawable/rounded_ba_c_k_back">
 
                     <ImageView
                         android:id="@+id/blue_check"
@@ -229,7 +229,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
-                    android:background="@drawable/rounded_back">
+                    android:background="@drawable/rounded_ba_c_k_back">
 
                     <ImageView
                         android:id="@+id/orange_check"
@@ -280,7 +280,7 @@
                 android:text="Use Vector Icon"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/vector_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -301,7 +301,7 @@
             android:layout_height="wrap_content"
             android:text="AL-QURAN"
             android:textColor="#2D712D"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
             android:layout_marginTop="24dp"
             android:layout_marginStart="24dp"
             android:textSize="20sp"/>
@@ -332,7 +332,7 @@
                 android:text="Quran"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/quran_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -405,7 +405,7 @@
                 android:text="Transliteration (Latin)"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/transliteration_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -453,7 +453,7 @@
                 android:text="Translation"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/font_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -551,7 +551,7 @@
                 android:text="Font Sizes"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/font_size_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -566,7 +566,7 @@
                 android:padding="4dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/rounded_back"
+                android:background="@drawable/rounded_ba_c_k_back"
                 android:tint="@color/purple"
                 android:foreground="?selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -599,7 +599,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         android:text="Arabic Font"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -623,7 +623,7 @@
                         android:layout_height="wrap_content"
                         android:text="16sp"
                         android:textSize="16sp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
@@ -641,7 +641,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         android:text="Transliteration"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -665,7 +665,7 @@
                         android:layout_height="wrap_content"
                         android:text="16sp"
                         android:textSize="16sp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
@@ -683,7 +683,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         android:text="Translation Font"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -707,7 +707,7 @@
                         android:layout_height="wrap_content"
                         android:text="16sp"
                         android:textSize="16sp"
-                        android:fontFamily="@font/poppins_semibold"
+                        android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
@@ -723,7 +723,7 @@
             android:layout_height="wrap_content"
             android:text="Application"
             android:textColor="#2D712D"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
             android:layout_marginTop="24dp"
             android:layout_marginStart="24dp"
             android:textSize="20sp"/>
@@ -752,7 +752,7 @@
                 android:text="Help and Feedback"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/feedback_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -797,7 +797,7 @@
                 android:text="About"
                 android:textSize="16sp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 app:layout_constraintStart_toEndOf="@id/about_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>

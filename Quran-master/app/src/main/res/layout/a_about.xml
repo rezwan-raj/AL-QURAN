@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 android:layout_gravity="center_vertical"
                 android:text="AL-QURAN উচ্চারণ ও অর্থসহ"
                 android:textColor="?accent"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:fontFamily="@font/comfortaa_bold"
+                android:fontFamily="@font/com_fortaa_bold_b_o_ld"
                 android:textSize="20sp"
                 android:textColor="?blackWhite"
                 android:text=""/>
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 android:text="Made with "
                 android:textSize="18sp"
                 android:letterSpacing=".15"
@@ -99,7 +99,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
                 android:text=" in Bangladesh"
                 android:textSize="18sp"
                 android:letterSpacing=".15"
@@ -113,7 +113,7 @@
             android:text="REZWAN AHMED RAJ"
             android:textColor="@color/purple"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/comfortaa_bold"
+            android:fontFamily="@font/com_fortaa_bold_b_o_ld"
             android:textSize="20sp"/>
 
         <View

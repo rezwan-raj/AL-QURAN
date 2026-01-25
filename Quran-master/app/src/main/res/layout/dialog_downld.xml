@@ -12,7 +12,7 @@
         android:textSize="@dimen/_14sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:textColor="@color/purple"
-        android:fontFamily="@font/open_sans_semibold"
+        android:fontFamily="@font/op_en_open_san_s_semibold"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1/286"
-        android:fontFamily="@font/comfortaa_bold"
+        android:fontFamily="@font/com_fortaa_bold_b_o_ld"
         android:textColor="@color/purple"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"

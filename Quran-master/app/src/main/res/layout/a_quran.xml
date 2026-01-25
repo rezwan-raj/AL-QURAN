@@ -12,7 +12,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/pop_p_ins_poppins_bold"
         android:text="AL-QURAN"
         android:textSize="@dimen/_24sdp"
         android:layout_marginTop="16dp"
@@ -25,7 +25,7 @@
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans"
+        android:fontFamily="@font/op_en_open_sans"
         android:text="আল কুরআন-উচ্চারণ অর্থসহ"
 
         android:textAlignment="center"

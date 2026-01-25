@@ -23,13 +23,13 @@ class Custo_Toa(private val activity: Activity) {
             val  toastLayout = layout.findViewById<ImageView>(R.id.image)
             when(type) {
                 TOAST_POSITIVE -> {
-                    layout.setBackgroundResource(R.drawable.toast_positive)
+                    layout.setBackgroundResource(R.drawable.to_ast_posit_iv_e_postitive)
                     toastLayout.setImageDrawable(ResourcesCompat.getDrawable(resources,
                         R.drawable.iicc_ch_eck, null)
                     )
                 }
                 TOAST_NEGATIVE ->  {
-                    layout.setBackgroundResource(R.drawable.toast_negative)
+                    layout.setBackgroundResource(R.drawable.to_a_st_neg)
                     toastLayout.setImageDrawable(ResourcesCompat.getDrawable(resources,
                         R.drawable.er_r_or, null)
                     )

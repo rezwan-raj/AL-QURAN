@@ -44,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/search_icon"
                 android:inputType="textCapSentences"
-                android:background="@drawable/search_background"/>
+                android:background="@drawable/se_a_rch_bg"/>
 
             <ImageView
                 android:id="@+id/search_icon"
@@ -61,7 +61,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/search_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:src="@drawable/iicc_bas_eline_sea_rch_24"
-                android:background="@drawable/search_icon_background"/>
+                android:background="@drawable/sea_r_ch_ic_on_bg"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

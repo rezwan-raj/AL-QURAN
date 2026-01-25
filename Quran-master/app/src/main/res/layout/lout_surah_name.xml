@@ -19,7 +19,7 @@
         android:layout_marginStart="@dimen/_14sdp"
         android:textColor="@color/purple"
         android:gravity="center"
-        android:fontFamily="@font/open_sans_semibold"
+        android:fontFamily="@font/op_en_open_san_s_semibold"
         android:tint="@color/orange"
         android:backgroundTint="@color/orange"
         android:background="@drawable/cnt"/>
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_14sdp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
             android:textColor="#2D712D"/>
 
         <TextView
@@ -61,7 +61,7 @@
         app:layout_constraintHorizontal_bias="1"
         android:layout_marginEnd="@dimen/_14sdp"
         android:textSize="@dimen/_20sdp"
-        android:fontFamily="@font/al_qalam"
+        android:fontFamily="@font/al_qalam_a_l_q_a_l_am"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/name_layout"

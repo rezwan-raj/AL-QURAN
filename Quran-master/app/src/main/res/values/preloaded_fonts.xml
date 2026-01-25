@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/hind_siliguri</item>
-        <item>@font/open_sans</item>
-        <item>@font/open_sans_condensed_bold</item>
-        <item>@font/open_sans_semibold</item>
-        <item>@font/poppins_bold</item>
-        <item>@font/poppins_semibold</item>
-        <item>@font/roboto</item>
+        <item>@font/hi_nd_hind_siliguri</item>
+        <item>@font/op_en_open_sans</item>
+        <item>@font/open_sans_condensed_bold_b_o_l_d</item>
+        <item>@font/op_en_open_san_s_semibold</item>
+        <item>@font/pop_p_ins_poppins_bold</item>
+        <item>@font/po_p_pi_ns_poppins_semibold</item>
+        <item>@font/rob_o_to_robboto</item>
     </array>
 </resources>

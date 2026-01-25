@@ -14,7 +14,7 @@
     android:paddingTop="8dp"
     android:elevation="8dp"
     android:paddingBottom="8dp"
-    android:background="@drawable/toast_positive">
+    android:background="@drawable/to_ast_posit_iv_e_postitive">
 
     <ImageView
         android:id="@+id/image"

@@ -19,7 +19,7 @@
         android:textAlignment="center"
         android:visibility="gone"
         android:textSize="@dimen/_24sdp"
-        android:fontFamily="@font/open_sans_semibold"
+        android:fontFamily="@font/op_en_open_san_s_semibold"
         android:textColor="#2D712D"
         android:layout_gravity="center"
         android:elevation="2dp"/>

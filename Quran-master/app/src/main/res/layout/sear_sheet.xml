@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="@dimen/_6sdp"
-        android:background="@drawable/sheet_background"
+        android:background="@drawable/she_et_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/search_icon"
             android:inputType="textCapSentences"
-            android:background="@drawable/search_background"/>
+            android:background="@drawable/se_a_rch_bg"/>
 
         <ImageView
             android:id="@+id/search_icon"
@@ -51,7 +51,7 @@
             app:layout_constraintBottom_toBottomOf="@id/search_text"
             app:layout_constraintEnd_toEndOf="parent"
             android:src="@drawable/iicc_bas_eline_sea_rch_24"
-            android:background="@drawable/search_icon_background"/>
+            android:background="@drawable/sea_r_ch_ic_on_bg"/>
 
         <RadioGroup
             android:id="@+id/filter_group"
@@ -146,7 +146,7 @@
         android:layout_marginStart="@dimen/_6sdp"
         android:layout_marginEnd="@dimen/_6sdp"
         android:layout_marginBottom="@dimen/_6sdp"
-        android:background="@drawable/sheet_background"
+        android:background="@drawable/she_et_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,7 +157,7 @@
         android:focusable="true"
         android:foreground="?selectableItemBackground"
         android:textSize="@dimen/_16sdp"
-        android:fontFamily="@font/open_sans_semibold"
+        android:fontFamily="@font/op_en_open_san_s_semibold"
         android:gravity="center"
         android:padding="@dimen/_6sdp"
         android:textColor="@color/white"/>

@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_18sdp"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/pop_p_ins_poppins_bold"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_14sdp"
-                    android:fontFamily="@font/open_sans"
+                    android:fontFamily="@font/op_en_open_sans"
                     android:layout_gravity="center"
                     android:textColor="@color/white"/>
 

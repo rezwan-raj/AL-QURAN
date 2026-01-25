@@ -88,7 +88,7 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
                     if (it.reading) {
                         itemView.findViewById<LinearLayout>(R.id.main_layout)
                             .background = ResourcesCompat.getDrawable(
-                            context.resources, R.drawable.reading_background, null)
+                            context.resources, R.drawable.rea_di_ng_reading_bg, null)
                     } else itemView.findViewById<LinearLayout>(R.id.main_layout).background = null
                     ayatNo?.text = numberFormat.format(it.ayat)//it.ayat.toString()
                     arabic?.text = if (Application_D(context).arabic) it.utsmani else it.indopak

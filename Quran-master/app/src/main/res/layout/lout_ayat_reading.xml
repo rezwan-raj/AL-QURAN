@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="4dp"
-    android:background="@drawable/reading_background"
+    android:background="@drawable/rea_di_ng_reading_bg"
     android:layout_marginBottom="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +24,7 @@
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:textSize="@dimen/_8sdp"
-            android:fontFamily="@font/open_sans_semibold"
+            android:fontFamily="@font/op_en_open_san_s_semibold"
             android:textColor="@color/white"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="@dimen/_12sdp"
             android:textSize="@dimen/_12sdp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/po_p_pi_ns_poppins_semibold"
             android:textColor="?accent"/>
 
         <ImageView
@@ -107,7 +107,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="@dimen/_6sdp"
         android:textSize="@dimen/_22sdp"
-        android:fontFamily="@font/al_qalam"
+        android:fontFamily="@font/al_qalam_a_l_q_a_l_am"
         android:textColor="#2D712D"
         android:layout_marginStart="@dimen/_12sdp"/>
 
@@ -121,7 +121,7 @@
         android:paddingEnd="@dimen/_12sdp"
         android:paddingBottom="@dimen/_8sdp"
         android:background="?translitaration"
-        android:fontFamily="@font/hind_siliguri"
+        android:fontFamily="@font/hi_nd_hind_siliguri"
         android:textColor="@color/purple"
         android:textSize="@dimen/_14sdp" />
 
@@ -132,7 +132,7 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:textSize="@dimen/_14sdp"
-        android:fontFamily="@font/hind_siliguri"
+        android:fontFamily="@font/hi_nd_hind_siliguri"
         android:textColor="#2D712D"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="@dimen/_12sdp"/>

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/language"
         android:textColor="@color/purple"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/pop_p_ins_poppins_bold"
         android:textSize="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_2sdp"
         android:layout_marginStart="@dimen/_12sdp"

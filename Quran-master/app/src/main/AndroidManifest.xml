@@ -19,9 +19,9 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/iicc_ic_laun_cher"
         android:label="AL-QURAN আল-কুরআন উচ্চারণ ও অর্থসহ"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/iicc_ic_laun_cher_rou_nd"
         android:supportsRtl="true"
         android:theme="@style/ThemeLightPurple"
         android:usesCleartextTraffic="true"

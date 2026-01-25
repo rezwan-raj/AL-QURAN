@@ -16,6 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="@dimen/_6sdp"
-        android:background="@drawable/sheet_background"/>
+        android:background="@drawable/she_et_bg"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
