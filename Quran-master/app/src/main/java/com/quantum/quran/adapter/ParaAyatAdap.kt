@@ -150,8 +150,8 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<Pa_R_Ah_Ay>)
             ResourcesCompat.getDrawable(
                 context.resources,
                 if (quran.readAyatNo(it.pos)!!.englishPro == "T")
-                    R.drawable.ic_baseline_bookmark_24
-                else R.drawable.ic_baseline_bookmark_border_24,
+                    R.drawable.icc_bline_bmark_24
+                else R.drawable.icc_base_line_book_mark_border_24,
                 null
             )
         )
@@ -164,8 +164,8 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<Pa_R_Ah_Ay>)
                 ResourcesCompat.getDrawable(
                     context.resources,
                     if (quran.readAyatNo(it.pos)!!.englishPro == "T")
-                        R.drawable.ic_baseline_bookmark_24
-                    else R.drawable.ic_baseline_bookmark_border_24,
+                        R.drawable.icc_bline_bmark_24
+                    else R.drawable.icc_base_line_book_mark_border_24,
                     null
                 )
             )

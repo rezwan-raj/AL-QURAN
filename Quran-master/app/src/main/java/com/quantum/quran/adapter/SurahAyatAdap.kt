@@ -181,8 +181,8 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
             ResourcesCompat.getDrawable(
                 context.resources,
                 if (this.quran.readAyatNo(it.pos)!!.englishPro == "T")
-                    R.drawable.ic_baseline_bookmark_24
-                else R.drawable.ic_baseline_bookmark_border_24,
+                    R.drawable.icc_bline_bmark_24
+                else R.drawable.icc_base_line_book_mark_border_24,
                 null
             )
         )
@@ -195,8 +195,8 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
                 ResourcesCompat.getDrawable(
                     context.resources,
                     if (this.quran.readAyatNo(it.pos)!!.englishPro == "T")
-                        R.drawable.ic_baseline_bookmark_24
-                    else R.drawable.ic_baseline_bookmark_border_24,
+                        R.drawable.icc_bline_bmark_24
+                    else R.drawable.icc_base_line_book_mark_border_24,
                     null
                 )
             )

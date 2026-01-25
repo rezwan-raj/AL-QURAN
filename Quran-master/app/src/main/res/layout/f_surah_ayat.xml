@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toTopOf="@id/search_text"
                 app:layout_constraintBottom_toBottomOf="@id/search_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/ic_baseline_search_24"
+                android:src="@drawable/iicc_bas_eline_sea_rch_24"
                 android:background="@drawable/search_icon_background"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

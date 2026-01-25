@@ -32,23 +32,23 @@ class Med_Notifi(val activity: Context) {
         createNotificationChannels()
         initMediaSession()
 
-        var notificationAction = R.drawable.ic_baseline_call_24 //needs to be initialized
+        var notificationAction = R.drawable.iicc_base_line_call_24 //needs to be initialized
 
         var playPauseAction: PendingIntent? = null
 
         //Build a new notification according to the current state of the MediaPlayer
         if (playbaStat === Play_ba_Stat.PLAYING) {
-            notificationAction = R.drawable.ic_baseline_call_24
+            notificationAction = R.drawable.iicc_base_line_call_24
             //create the pause action
             playPauseAction = playbackAction(1)
         } else if (playbaStat === Play_ba_Stat.PAUSED) {
-            notificationAction = R.drawable.ic_baseline_call_24
+            notificationAction = R.drawable.iicc_base_line_call_24
             //create the play action
             playPauseAction = playbackAction(0)
         }
         val largeIcon = BitmapFactory.decodeResource(
             activity.resources,
-            R.drawable.ic_baseline_call_24
+            R.drawable.iicc_base_line_call_24
         ) //replace with your own image
 
         // Create a new Notification
@@ -61,14 +61,14 @@ class Med_Notifi(val activity: Context) {
                         .setShowActionsInCompactView(0, 1, 2)
                 ) // Set the Notification color
                 .setLargeIcon(largeIcon)
-                .setSmallIcon(R.drawable.ic_baseline_call_24) // Set Notification content information
+                .setSmallIcon(R.drawable.iicc_base_line_call_24) // Set Notification content information
                 .setContentText("Text")
                 .setContentTitle("Title")
                 .setOngoing(true)
                 .setContentInfo("Info") // Add playback actions
-                .addAction(R.drawable.ic_baseline_call_24, "previous", playbackAction(3))
+                .addAction(R.drawable.iicc_base_line_call_24, "previous", playbackAction(3))
                 .addAction(notificationAction, "pause", playPauseAction)
-                .addAction(R.drawable.ic_baseline_call_24, "next", playbackAction(2))
+                .addAction(R.drawable.iicc_base_line_call_24, "next", playbackAction(2))
 
         (activity.getSystemService(NOTIFICATION_SERVICE) as NotificationManager).notify(
             NOTIFICATION_ID,

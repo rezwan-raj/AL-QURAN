@@ -22,7 +22,7 @@
         android:fontFamily="@font/open_sans_semibold"
         android:tint="@color/orange"
         android:backgroundTint="@color/orange"
-        android:background="@drawable/count"/>
+        android:background="@drawable/cnt"/>
 
     <LinearLayout
         android:id="@+id/name_layout"

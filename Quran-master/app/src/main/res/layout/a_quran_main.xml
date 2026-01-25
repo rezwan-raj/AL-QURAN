@@ -16,7 +16,7 @@
         android:padding="@dimen/_6sdp"
         app:tint="@color/purple"
         android:layout_margin="@dimen/_6sdp"
-        android:src="@drawable/ic_close"/>
+        android:src="@drawable/iicc_clo_see"/>
 
     <TextView
         android:id="@+id/title"
@@ -40,7 +40,7 @@
         android:padding="@dimen/_6sdp"
         app:tint="@color/purple"
         android:layout_margin="@dimen/_6sdp"
-        android:src="@drawable/ic_baseline_search_24"/>
+        android:src="@drawable/iicc_bas_eline_sea_rch_24"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/header_card"
@@ -127,7 +127,7 @@
                 app:tint="@color/white"
                 android:padding="4dp"
                 android:background="@drawable/abo_bckgro"
-                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:src="@drawable/iicc_base_line_chevron_rght_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -171,7 +171,7 @@
         android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_settings"
+        android:src="@drawable/iicc_set_ti_ngs_settings"
         android:layout_marginEnd="@dimen/_14sdp"
         android:padding="@dimen/_4sdp"
         android:clickable="true"

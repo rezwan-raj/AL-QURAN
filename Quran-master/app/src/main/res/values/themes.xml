@@ -206,7 +206,7 @@
         <item name="chipBackgroundColor">@color/backg_chip_colour</item>
         <item name="android:textColor">@color/txt_c_colour</item>
         <item name="checkedIconVisible">true</item>
-        <item name="checkedIcon">@drawable/ic_check</item>
+        <item name="checkedIcon">@drawable/iicc_ch_eck</item>
     </style>
 
 </resources>

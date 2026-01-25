@@ -104,7 +104,7 @@ class BookmarkAdap(val context: Context, val data: ArrayList<`AL-QURAN`>,
                 bookmark?.setImageDrawable(
                     ResourcesCompat.getDrawable(
                         context.resources,
-                        R.drawable.ic_baseline_bookmark_24,
+                        R.drawable.icc_bline_bmark_24,
                         null
                     )
                 )

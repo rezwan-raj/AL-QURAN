@@ -17,7 +17,7 @@
         android:padding="@dimen/_6sdp"
         app:tint="@color/purple"
         android:layout_margin="@dimen/_6sdp"
-        android:src="@drawable/ic_baseline_keyboard_backspace_24"/>
+        android:src="@drawable/iicc_base_line_keyb_back_space_24"/>
 
     <TextView
         android:id="@+id/title"

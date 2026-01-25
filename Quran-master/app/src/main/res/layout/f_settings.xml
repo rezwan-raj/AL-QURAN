@@ -33,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:visibility="gone"
-                    android:src="@drawable/header_image"
+                    android:src="@drawable/he_ad_er_img"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_nightlight"/>
+                android:src="@drawable/iicc_night_light_nightlight"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_color_lens"/>
+                android:src="@drawable/iicc_color_colour_lens"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,7 +193,7 @@
                         app:tint="@color/white"
                         android:visibility="gone"
                         android:padding="4dp"
-                        android:src="@drawable/ic_check" />
+                        android:src="@drawable/iicc_ch_eck" />
 
                 </FrameLayout>
 
@@ -216,7 +216,7 @@
                         app:tint="@color/white"
                         android:padding="4dp"
                         android:visibility="gone"
-                        android:src="@drawable/ic_check" />
+                        android:src="@drawable/iicc_ch_eck" />
 
                 </FrameLayout>
 
@@ -239,7 +239,7 @@
                         app:tint="@color/white"
                         android:padding="4dp"
                         android:visibility="gone"
-                        android:src="@drawable/ic_check" />
+                        android:src="@drawable/iicc_ch_eck" />
 
                 </FrameLayout>
 
@@ -271,7 +271,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_code"/>
+                android:src="@drawable/iicc_co_dde"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -321,7 +321,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_quran"
+                android:src="@drawable/icc_qur_an_quran"
                 app:tint="?attr/colorControlNormal"/>
 
             <TextView
@@ -542,7 +542,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_font_download"/>
+                android:src="@drawable/iicc_font_dwnload"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -560,7 +560,7 @@
                 android:id="@+id/open_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_drop_down_circle"
+                android:src="@drawable/ic_arro_d_down_cir"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:padding="4dp"
@@ -743,7 +743,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_mail"/>
+                android:src="@drawable/iicc_m_a_il_mail"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -788,7 +788,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:tint="@color/purple"
-                android:src="@drawable/ic_info"/>
+                android:src="@drawable/iicc_in_fo_info"/>
 
             <TextView
                 android:layout_width="wrap_content"
