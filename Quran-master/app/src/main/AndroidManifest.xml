@@ -18,7 +18,7 @@
 
     <application
         android:allowBackup="true"
-        android:fullBackupContent="@xml/backup_descriptor"
+        android:fullBackupContent="@xml/ba_c_kup_descrip"
         android:icon="@mipmap/iicc_ic_laun_cher"
         android:label="AL-QURAN আল-কুরআন উচ্চারণ ও অর্থসহ"
         android:roundIcon="@mipmap/iicc_ic_laun_cher_rou_nd"
