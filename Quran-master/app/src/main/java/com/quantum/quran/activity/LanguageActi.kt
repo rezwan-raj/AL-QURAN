@@ -7,7 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.ALanguageBinding
 import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
@@ -24,14 +24,14 @@ class LanguageActi : AppCompatActivity() {
         setContentView(binding.root)
         binding.back.setOnClickListener { finish() }
 
-        when(ApplicationData(this).language) {
+        when(Application_D(this).language) {
             "en" -> binding.languageGroup.check(R.id.english)
             "bn" -> binding.languageGroup.check(R.id.bangla)
             "tr" -> binding.languageGroup.check(R.id.turkish)
         }
 
         binding.languageGroup.setOnCheckedChangeListener { group, checkedId ->
-            ApplicationData(this).language =
+            Application_D(this).language =
                 when(checkedId) {
                     R.id.english -> "en"
                     R.id.bangla -> "bn"
@@ -44,7 +44,7 @@ class LanguageActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

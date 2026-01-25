@@ -8,7 +8,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.adapter.PagerAdap
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.ASurahBinding
 import com.quantum.quran.fragment.SurahAyat
@@ -87,7 +87,7 @@ class SurahActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

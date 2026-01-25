@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdap
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.AQuranMainBinding
 import com.quantum.quran.external.Search
@@ -35,9 +35,9 @@ class QuranMainActi : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             when(result.resultCode) {
                 RESULT_OK -> {
-                    if (dark != ApplicationData(this).darkTheme
-                        || currentTheme != ApplicationData(this).primaryColor
-                        || lang != ApplicationData(this).language)
+                    if (dark != Application_D(this).darkTheme
+                        || currentTheme != Application_D(this).primaryColor
+                        || lang != Application_D(this).language)
                         reCreate()
                 }
             }
@@ -49,7 +49,7 @@ class QuranMainActi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        ApplicationData(this).run {
+        Application_D(this).run {
             dark = darkTheme
             lang = language
             currentTheme = primaryColor
@@ -126,10 +126,10 @@ class QuranMainActi : AppCompatActivity() {
                 it.surahName.text = resources.getStringArray(R.array.surah_name)[last.surahNo] //last.surahName
                 it.ayahNo.text =
                     if (last.ayatNo == 0) "${resources.getString(R.string.ayat_no)}: " +
-                            NumberFormat.getInstance(Locale(ApplicationData(this).language))
+                            NumberFormat.getInstance(Locale(Application_D(this).language))
                                 .format(1)
                     else "${resources.getString(R.string.ayat_no)}: " +
-                            NumberFormat.getInstance(Locale(ApplicationData(this)
+                            NumberFormat.getInstance(Locale(Application_D(this)
                                 .language)).format(last.ayatNo)
                 it.headerCard.setOnClickListener { _ ->
                     SurahActi.launch(this, last.surahNo, last.ayatNo)
@@ -139,7 +139,7 @@ class QuranMainActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

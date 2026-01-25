@@ -3,7 +3,7 @@ package com.quantum.quran.database
 import android.content.Context
 import android.preference.PreferenceManager
 
-class ApplicationData(val context: Context) {
+class Application_D(val context: Context) {
 
     companion object {
         private const val DATA_NAME = "APPLICATION"

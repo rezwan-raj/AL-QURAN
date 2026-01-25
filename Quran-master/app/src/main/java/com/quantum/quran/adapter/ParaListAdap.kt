@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.activity.ParaActi
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.JuzModel
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
@@ -62,5 +62,5 @@ class ParaListAdap(val context: Context, val data: ArrayList<JuzModel>):
     }
 
     private val numberFormat: NumberFormat =
-        NumberFormat.getInstance(Locale(ApplicationData(context).language))
+        NumberFormat.getInstance(Locale(Application_D(context).language))
 }

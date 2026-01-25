@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.`interface`.Bookmark
 import com.quantum.quran.activity.SurahActi
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
@@ -67,16 +67,16 @@ class BookmarkAdap(val context: Context, val data: ArrayList<Quran>,
         data[position].let {
             holder.run {
                 ayatNo?.text = it.ayat.toString()
-                arabic?.text = if (ApplicationData(context).arabic) it.utsmani else it.indopak
+                arabic?.text = if (Application_D(context).arabic) it.utsmani else it.indopak
 
                 surahName?.text = SurahHelper(context).readDataAt(it.surah)?.name
 
                 translation?.visibility = View.VISIBLE
                 translation?.text =
-                    when(ApplicationData(context).translation) {
-                        ApplicationData.TAISIRUL -> textToHtml(it.terjemahan)
-                        ApplicationData.MUHIUDDIN -> textToHtml(it.jalalayn)
-                        ApplicationData.ENGLISH -> textToHtml(it.englishT)
+                    when(Application_D(context).translation) {
+                        Application_D.TAISIRUL -> textToHtml(it.terjemahan)
+                        Application_D.MUHIUDDIN -> textToHtml(it.jalalayn)
+                        Application_D.ENGLISH -> textToHtml(it.englishT)
                         else -> {
                             translation?.visibility = View.GONE
                             ""
@@ -86,11 +86,11 @@ class BookmarkAdap(val context: Context, val data: ArrayList<Quran>,
                 share?.setOnClickListener { v->
                     var text = "Surah: ${SurahHelper(context).readDataAt(it.surah)!!.name}" +
                             ", Ayat: ${it.ayat}\n\n"
-                    text += if (ApplicationData(context).arabic) it.utsmani else it.indopak
-                    text += "\n\nঅর্থ :  "+when(ApplicationData(context).translation) {
-                        ApplicationData.TAISIRUL -> it.terjemahan
-                        ApplicationData.MUHIUDDIN -> it.jalalayn
-                        ApplicationData.ENGLISH -> it.englishT
+                    text += if (Application_D(context).arabic) it.utsmani else it.indopak
+                    text += "\n\nঅর্থ :  "+when(Application_D(context).translation) {
+                        Application_D.TAISIRUL -> it.terjemahan
+                        Application_D.MUHIUDDIN -> it.jalalayn
+                        Application_D.ENGLISH -> it.englishT
                         else -> ""
                     }
                     val sendIntent = Intent()
@@ -120,15 +120,15 @@ class BookmarkAdap(val context: Context, val data: ArrayList<Quran>,
 
 
                 setPron(pron, it)
-                arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).arabicFontSize)
-                pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).transliterationFontSize)
-                translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).translationFontSize)
+                arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).arabicFontSize)
+                pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).transliterationFontSize)
+                translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).translationFontSize)
             }
         }
     }
 
     private fun setPron(pron: TextView?, it: Quran) {
-        if (ApplicationData(context).transliteration) {
+        if (Application_D(context).transliteration) {
             pron?.text = it.latin
             pron?.visibility = View.VISIBLE
         } else {

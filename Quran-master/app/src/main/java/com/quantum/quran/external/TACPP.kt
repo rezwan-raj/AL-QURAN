@@ -9,13 +9,13 @@ import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 
 class TACPP(val context: Activity) {
 
     @SuppressLint("SetJavaScriptEnabled")
     fun launch(type: Int) {
-        val searchSheetDialog = BottomSheetDialog(context, if (ApplicationData(context).darkTheme)
+        val searchSheetDialog = BottomSheetDialog(context, if (Application_D(context).darkTheme)
             R.style.bottomSheetDark else R.style.bottomSheet)
         searchSheetDialog.setContentView(R.layout.pri_sheet)
 
@@ -49,7 +49,7 @@ class TACPP(val context: Activity) {
             bottomSheetDialog.findViewById<WebView>(R.id.text)?.let { wv->
                 wv.clipToOutline = true
                 var color = "black"
-                if (ApplicationData(context).darkTheme) {
+                if (Application_D(context).darkTheme) {
                     wv.setBackgroundColor(
                         ResourcesCompat.getColor(
                             context.resources,

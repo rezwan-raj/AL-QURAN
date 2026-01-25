@@ -14,7 +14,7 @@ import android.view.View
 import android.widget.SeekBar
 import androidx.activity.result.contract.ActivityResultContracts
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.ASettingsBinding
 import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
@@ -22,7 +22,7 @@ import java.util.*
 
 class SettingsActi : AppCompatActivity() {
 
-    private lateinit var applicationData: ApplicationData
+    private lateinit var applicationData: Application_D
     private lateinit var binding: ASettingsBinding
 
 
@@ -48,7 +48,7 @@ class SettingsActi : AppCompatActivity() {
 
         binding.back.setOnClickListener { finish() }
 
-        applicationData = ApplicationData(this)
+        applicationData = Application_D(this)
 
         binding.language.setOnClickListener {
             startForResult.launch(Intent(this, LanguageActi::class.java))
@@ -120,23 +120,23 @@ class SettingsActi : AppCompatActivity() {
         binding.blueCheck.visibility = View.GONE
         binding.orangeCheck.visibility = View.GONE
         when (applicationData.primaryColor) {
-            ApplicationData.PURPLE -> binding.greenCheck.visibility = View.VISIBLE
-            ApplicationData.BLUE -> binding.blueCheck.visibility = View.VISIBLE
-            ApplicationData.ORANGE -> binding.orangeCheck.visibility = View.VISIBLE
+            Application_D.PURPLE -> binding.greenCheck.visibility = View.VISIBLE
+            Application_D.BLUE -> binding.blueCheck.visibility = View.VISIBLE
+            Application_D.ORANGE -> binding.orangeCheck.visibility = View.VISIBLE
         }
     }
 
     private fun initColorClick() {
         binding.green.setOnClickListener {
-            applicationData.primaryColor = ApplicationData.PURPLE
+            applicationData.primaryColor = Application_D.PURPLE
             reCreate()
         }
         binding.blue.setOnClickListener {
-            applicationData.primaryColor = ApplicationData.BLUE
+            applicationData.primaryColor = Application_D.BLUE
             reCreate()
         }
         binding.orange.setOnClickListener {
-            applicationData.primaryColor = ApplicationData.ORANGE
+            applicationData.primaryColor = Application_D.ORANGE
             reCreate()
         }
     }
@@ -159,9 +159,9 @@ class SettingsActi : AppCompatActivity() {
         binding.translationExpandable.expand(false)
         binding.translationGroup.check(
             when(applicationData.translation) {
-                ApplicationData.TAISIRUL -> R.id.c_taisirul
-                ApplicationData.MUHIUDDIN -> R.id.c_muhiuddin
-                ApplicationData.ENGLISH -> R.id.c_eng
+                Application_D.TAISIRUL -> R.id.c_taisirul
+                Application_D.MUHIUDDIN -> R.id.c_muhiuddin
+                Application_D.ENGLISH -> R.id.c_eng
                 else -> {
                     binding.translationExpandable.collapse(false)
                     binding.translationSwitch.isChecked = false
@@ -174,20 +174,20 @@ class SettingsActi : AppCompatActivity() {
     private fun initTranslationClick() {
         binding.translationGroup.setOnCheckedChangeListener { _, checkedId ->
             applicationData.translation = when(checkedId) {
-                R.id.c_taisirul -> ApplicationData.TAISIRUL
-                R.id.c_muhiuddin -> ApplicationData.MUHIUDDIN
-                R.id.c_eng -> ApplicationData.ENGLISH
-                else -> ApplicationData.OFF
+                R.id.c_taisirul -> Application_D.TAISIRUL
+                R.id.c_muhiuddin -> Application_D.MUHIUDDIN
+                R.id.c_eng -> Application_D.ENGLISH
+                else -> Application_D.OFF
             }
         }
 
         binding.translationSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 binding.translationGroup.check(R.id.c_muhiuddin)
-                applicationData.translation = ApplicationData.MUHIUDDIN
+                applicationData.translation = Application_D.MUHIUDDIN
                 binding.translationExpandable.expand()
             } else {
-                applicationData.translation = ApplicationData.OFF
+                applicationData.translation = Application_D.OFF
                 binding.translationExpandable.collapse()
             }
         }
@@ -314,7 +314,7 @@ class SettingsActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

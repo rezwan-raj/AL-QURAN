@@ -7,7 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.quantum.minar.database.UserData
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
 import com.quantum.quran.theme.ApplicationTheme
@@ -56,7 +56,7 @@ class SplashActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

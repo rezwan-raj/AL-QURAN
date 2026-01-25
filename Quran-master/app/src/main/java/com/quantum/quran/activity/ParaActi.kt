@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.constant.P
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.AParaBinding
 import com.quantum.quran.fragment.ParaAyat
 import com.quantum.quran.theme.ApplicationTheme
@@ -40,7 +40,7 @@ class ParaActi : AppCompatActivity() {
         binding?.back?.setOnClickListener { finish() }
 
         val numberFormat: NumberFormat =
-            NumberFormat.getInstance(Locale(ApplicationData(this).language))
+            NumberFormat.getInstance(Locale(Application_D(this).language))
         binding?.qPager?.adapter = PagerAdap(
             supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ).apply {
@@ -81,7 +81,7 @@ class ParaActi : AppCompatActivity() {
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        val localeToSwitchTo = Locale(ApplicationData(newBase!!).language)
+        val localeToSwitchTo = Locale(Application_D(newBase!!).language)
         val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }

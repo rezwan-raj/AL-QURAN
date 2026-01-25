@@ -19,7 +19,7 @@ import com.quantum.quran.R
 import com.quantum.quran.adapter.SurahAyatAdap
 import com.quantum.quran.application.Cnstnt
 import com.quantum.quran.constant.Nam
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.FSurahAyatBinding
 import com.quantum.quran.model.Quran
@@ -68,7 +68,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
             data.addAll(QuranHelper(requireContext()).readSurahNo(position + 1))
             val temp = SurahHelper(requireContext()).readData()[position]
             val t = "${revelation(temp.revelation)}   |   ${NumberFormat.getInstance(
-                Locale(ApplicationData(requireContext()).language)).format(temp.verse)}" +
+                Locale(Application_D(requireContext()).language)).format(temp.verse)}" +
                     "  " + resources.getString(R.string.verses)
             adapterSurah = SurahAyatAdap(
                 requireContext(),
@@ -155,16 +155,16 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
                 "", "", "", "", "")
             )
             val a = QuranHelper(requireContext()).readData().filter {
-                when(ApplicationData(requireContext()).translation) {
-                    ApplicationData.TAISIRUL -> it.terjemahan
-                    ApplicationData.MUHIUDDIN -> it.jalalayn
+                when(Application_D(requireContext()).translation) {
+                    Application_D.TAISIRUL -> it.terjemahan
+                    Application_D.MUHIUDDIN -> it.jalalayn
                     else -> it.englishT.lowercase(Locale.getDefault())
                 }.contains(filter.lowercase())
             }
             a.forEach {
-                val temp = when(ApplicationData(requireContext()).translation) {
-                    ApplicationData.TAISIRUL -> it.terjemahan
-                    ApplicationData.MUHIUDDIN -> it.jalalayn
+                val temp = when(Application_D(requireContext()).translation) {
+                    Application_D.TAISIRUL -> it.terjemahan
+                    Application_D.MUHIUDDIN -> it.jalalayn
                     else -> it.englishT
                 }
                 val start = temp.lowercase(Locale.getDefault())
@@ -179,14 +179,14 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
                         ayat = it.ayat,
                         indopak = it.indopak,
                         utsmani = it.utsmani,
-                        jalalayn = if (ApplicationData(requireContext()).translation
-                            == ApplicationData.MUHIUDDIN) translation else it.jalalayn,
+                        jalalayn = if (Application_D(requireContext()).translation
+                            == Application_D.MUHIUDDIN) translation else it.jalalayn,
                         latin = it.latin,
-                        terjemahan = if (ApplicationData(requireContext()).translation
-                            == ApplicationData.TAISIRUL) translation else it.terjemahan,
+                        terjemahan = if (Application_D(requireContext()).translation
+                            == Application_D.TAISIRUL) translation else it.terjemahan,
                         englishPro = it.englishPro,
-                        englishT = if (ApplicationData(requireContext()).translation
-                            == ApplicationData.ENGLISH) translation else it.englishT
+                        englishT = if (Application_D(requireContext()).translation
+                            == Application_D.ENGLISH) translation else it.englishT
                     )
                 )
             }

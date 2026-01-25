@@ -16,7 +16,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.Quran
 import com.quantum.quran.process.AudioProcess
 import com.quantum.quran.sql.QuranHelper
@@ -91,9 +91,9 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
                             context.resources, R.drawable.reading_background, null)
                     } else itemView.findViewById<LinearLayout>(R.id.main_layout).background = null
                     ayatNo?.text = numberFormat.format(it.ayat)//it.ayat.toString()
-                    arabic?.text = if (ApplicationData(context).arabic) it.utsmani else it.indopak
+                    arabic?.text = if (Application_D(context).arabic) it.utsmani else it.indopak
 
-                    if (ApplicationData(context).transliteration) {
+                    if (Application_D(context).transliteration) {
                         pron?.text = it.latin
                         pron?.visibility = View.VISIBLE
                         translation?.visibility = View.VISIBLE
@@ -105,9 +105,9 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
                     }
 
                     maintainClicks(play, share, bookmark, it)
-                    arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).arabicFontSize)
-                    pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).transliterationFontSize)
-                    translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).translationFontSize)
+                    arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).arabicFontSize)
+                    pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).transliterationFontSize)
+                    translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).translationFontSize)
                 }
             }
         } else {
@@ -119,10 +119,10 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
 
     private fun translation(translation: TextView?, it: Quran) {
         translation?.text =
-            when(ApplicationData(context).translation) {
-                ApplicationData.TAISIRUL -> textToHtml(it.terjemahan)
-                ApplicationData.MUHIUDDIN -> textToHtml(it.jalalayn)
-                ApplicationData.ENGLISH -> textToHtml(it.englishT)
+            when(Application_D(context).translation) {
+                Application_D.TAISIRUL -> textToHtml(it.terjemahan)
+                Application_D.MUHIUDDIN -> textToHtml(it.jalalayn)
+                Application_D.ENGLISH -> textToHtml(it.englishT)
                 else -> {
                     translation?.visibility = View.GONE
                     ""
@@ -132,10 +132,10 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
 
     private fun setPron(pron: TextView?, it: Quran) {
         pron?.text =
-            when(ApplicationData(context).translation) {
-                ApplicationData.TAISIRUL -> textToHtml(it.terjemahan)
-                ApplicationData.MUHIUDDIN -> textToHtml(it.jalalayn)
-                ApplicationData.ENGLISH -> textToHtml(it.englishT)
+            when(Application_D(context).translation) {
+                Application_D.TAISIRUL -> textToHtml(it.terjemahan)
+                Application_D.MUHIUDDIN -> textToHtml(it.jalalayn)
+                Application_D.ENGLISH -> textToHtml(it.englishT)
                 else -> {
                     pron?.visibility = View.GONE
                     ""
@@ -161,12 +161,12 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
         share?.setOnClickListener { v->
             var text = "${context.resources.getString(R.string.surah)}: $name, " +
                     "${context.resources.getString(R.string.ayat)}: ${it.ayat}\n\n"
-            text += if (ApplicationData(context).arabic) it.utsmani else it.indopak
+            text += if (Application_D(context).arabic) it.utsmani else it.indopak
             text += "\n\n${context.resources.getString(R.string.meaning)} " +
-                    ":  "+when(ApplicationData(context).translation) {
-                ApplicationData.TAISIRUL -> it.terjemahan
-                ApplicationData.MUHIUDDIN -> it.jalalayn
-                ApplicationData.ENGLISH -> it.englishT
+                    ":  "+when(Application_D(context).translation) {
+                Application_D.TAISIRUL -> it.terjemahan
+                Application_D.MUHIUDDIN -> it.jalalayn
+                Application_D.ENGLISH -> it.englishT
                 else -> ""
             }
             val sendIntent = Intent()
@@ -218,5 +218,5 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
     }
 
     private val numberFormat: NumberFormat =
-        NumberFormat.getInstance(Locale(ApplicationData(context).language))
+        NumberFormat.getInstance(Locale(Application_D(context).language))
 }

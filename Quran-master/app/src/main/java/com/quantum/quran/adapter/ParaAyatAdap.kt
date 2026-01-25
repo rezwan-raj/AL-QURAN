@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.ParaAyat
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
@@ -131,11 +131,11 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
         share?.setOnClickListener { v ->
             var text = "Surah-> ${SurahHelper(context).readDataAt(it.surah)!!.name}," +
                     " Ayat-> ${it.ayat}\n\n"
-            text += if (ApplicationData(context).arabic) it.utsmani else it.indopak
-            text += "\n\nঅর্থ :  "+when(ApplicationData(context).translation) {
-                ApplicationData.TAISIRUL -> it.terjemahan
-                ApplicationData.MUHIUDDIN -> it.jalalayn
-                ApplicationData.ENGLISH -> it.englishT
+            text += if (Application_D(context).arabic) it.utsmani else it.indopak
+            text += "\n\nঅর্থ :  "+when(Application_D(context).translation) {
+                Application_D.TAISIRUL -> it.terjemahan
+                Application_D.MUHIUDDIN -> it.jalalayn
+                Application_D.ENGLISH -> it.englishT
                 else -> ""
             }
             val sendIntent = Intent()
@@ -173,5 +173,5 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
     }
 
     private val numberFormat: NumberFormat =
-        NumberFormat.getInstance(Locale(ApplicationData(context).language))
+        NumberFormat.getInstance(Locale(Application_D(context).language))
 }

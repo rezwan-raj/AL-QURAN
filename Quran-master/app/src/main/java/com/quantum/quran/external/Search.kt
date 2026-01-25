@@ -12,7 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.quantum.quran.R
 import com.quantum.quran.adapter.SearchAdap
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.SearchModel
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
@@ -34,7 +34,7 @@ class Search(val context: Activity) {
     private var recyclerView: RecyclerView? = null
 
     fun searchSheet() {
-        val searchSheetDialog = BottomSheetDialog(context, if (ApplicationData(context).darkTheme)
+        val searchSheetDialog = BottomSheetDialog(context, if (Application_D(context).darkTheme)
             R.style.bottomSheetDark else R.style.bottomSheet)
         searchSheetDialog.setContentView(R.layout.sear_sheet)
 
@@ -190,9 +190,9 @@ class Search(val context: Activity) {
                                 terjemahan = it.terjemahan,
                                 englishPro = it.englishPro,
                                 englishT = it.englishT,
-                                trans = when(ApplicationData(context).translation) {
-                                    ApplicationData.TAISIRUL -> it.terjemahan
-                                    ApplicationData.MUHIUDDIN -> it.jalalayn
+                                trans = when(Application_D(context).translation) {
+                                    Application_D.TAISIRUL -> it.terjemahan
+                                    Application_D.MUHIUDDIN -> it.jalalayn
                                     else -> it.englishT
                                 }
                             )
@@ -254,9 +254,9 @@ class Search(val context: Activity) {
                                 latin = it.latin,
                                 terjemahan = it.terjemahan,
                                 englishPro = it.englishPro,
-                                trans = when(ApplicationData(context).translation) {
-                                    ApplicationData.TAISIRUL -> it.terjemahan
-                                    ApplicationData.MUHIUDDIN -> it.jalalayn
+                                trans = when(Application_D(context).translation) {
+                                    Application_D.TAISIRUL -> it.terjemahan
+                                    Application_D.MUHIUDDIN -> it.jalalayn
                                     else -> it.englishT
                                 }
                             )
@@ -266,16 +266,16 @@ class Search(val context: Activity) {
 
                 R.id.meaning -> {
                     val a = QuranHelper(context).readData().filter {
-                        when(ApplicationData(context).translation) {
-                            ApplicationData.TAISIRUL -> it.terjemahan
-                            ApplicationData.MUHIUDDIN -> it.jalalayn
+                        when(Application_D(context).translation) {
+                            Application_D.TAISIRUL -> it.terjemahan
+                            Application_D.MUHIUDDIN -> it.jalalayn
                             else -> it.englishT.lowercase(Locale.getDefault())
                         }.contains(filter.lowercase())
                     }
                     a.forEach {
-                        val temp = when(ApplicationData(context).translation) {
-                            ApplicationData.TAISIRUL -> it.terjemahan
-                            ApplicationData.MUHIUDDIN -> it.jalalayn
+                        val temp = when(Application_D(context).translation) {
+                            Application_D.TAISIRUL -> it.terjemahan
+                            Application_D.MUHIUDDIN -> it.jalalayn
                             else -> it.englishT
                         }
                         val start = temp.lowercase(Locale.getDefault())

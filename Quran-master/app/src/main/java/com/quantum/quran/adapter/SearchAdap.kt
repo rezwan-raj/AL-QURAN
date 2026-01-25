@@ -16,7 +16,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.activity.SurahActi
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 import com.quantum.quran.model.Quran
 import com.quantum.quran.model.SearchModel
 import com.quantum.quran.sql.QuranHelper
@@ -91,10 +91,10 @@ class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
                 data[position].let {
                     holder.run {
                         ayatNo?.text = it.ayat.toString()
-                        arabic?.text = if (ApplicationData(context).arabic)
+                        arabic?.text = if (Application_D(context).arabic)
                             textToHtml(it.utsmani) else textToHtml(it.indopak)
 
-                        if (ApplicationData(context).transliteration) {
+                        if (Application_D(context).transliteration) {
                             pron?.text = it.latin
                             pron?.visibility = View.VISIBLE
                         } else {
@@ -108,9 +108,9 @@ class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
 
                         maintainClicks(share, bookmark, holder, it)
 
-                        arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).arabicFontSize)
-                        pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).transliterationFontSize)
-                        translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, ApplicationData(context).translationFontSize)
+                        arabic?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).arabicFontSize)
+                        pron?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).transliterationFontSize)
+                        translation?.setTextSize(TypedValue.COMPLEX_UNIT_SP, Application_D(context).translationFontSize)
                     }
                 }
             }

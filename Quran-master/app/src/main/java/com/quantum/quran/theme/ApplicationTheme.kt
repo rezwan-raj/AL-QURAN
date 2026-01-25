@@ -2,23 +2,23 @@ package com.quantum.quran.theme
 
 import android.app.Activity
 import com.quantum.quran.R
-import com.quantum.quran.database.ApplicationData
+import com.quantum.quran.database.Application_D
 
 
 class ApplicationTheme(context: Activity) {
 
     init {
-        if (ApplicationData(context).darkTheme) {
-            when(ApplicationData(context).primaryColor) {
-                ApplicationData.PURPLE -> context.setTheme(R.style.ThemeDarkPurple)
-                ApplicationData.BLUE -> context.setTheme(R.style.ThemeDarkBlue)
-                ApplicationData.ORANGE -> context.setTheme(R.style.ThemeDarkOrange)
+        if (Application_D(context).darkTheme) {
+            when(Application_D(context).primaryColor) {
+                Application_D.PURPLE -> context.setTheme(R.style.ThemeDarkPurple)
+                Application_D.BLUE -> context.setTheme(R.style.ThemeDarkBlue)
+                Application_D.ORANGE -> context.setTheme(R.style.ThemeDarkOrange)
             }
         } else {
-            when(ApplicationData(context).primaryColor) {
-                ApplicationData.PURPLE -> context.setTheme(R.style.ThemeLightPurple)
-                ApplicationData.BLUE -> context.setTheme(R.style.ThemeLightBlue)
-                ApplicationData.ORANGE -> context.setTheme(R.style.ThemeLightOrange)
+            when(Application_D(context).primaryColor) {
+                Application_D.PURPLE -> context.setTheme(R.style.ThemeLightPurple)
+                Application_D.BLUE -> context.setTheme(R.style.ThemeLightBlue)
+                Application_D.ORANGE -> context.setTheme(R.style.ThemeLightOrange)
             }
         }
     }
