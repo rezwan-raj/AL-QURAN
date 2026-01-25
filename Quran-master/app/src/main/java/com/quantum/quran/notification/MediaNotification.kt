@@ -13,7 +13,7 @@ import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
 import androidx.core.app.NotificationCompat
 import com.quantum.quran.R
-import com.quantum.quran.application.Constant.Companion.PAUSE
+import com.quantum.quran.application.Cnstnt.Companion.PAUSE
 import com.quantum.quran.enum.PlaybackStatus
 
 class MediaNotification(val activity: Context) {

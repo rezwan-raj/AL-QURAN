@@ -1,6 +1,6 @@
 package com.quantum.quran.constant
 
-class Firebase {
+class Fire_Bas {
     companion object {
         const val AUDIO = ""
         const val SURAH_LIST = ""

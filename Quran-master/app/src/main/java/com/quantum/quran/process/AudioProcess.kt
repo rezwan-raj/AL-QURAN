@@ -10,7 +10,7 @@ import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.quantum.quran.R
-import com.quantum.quran.application.Constant.Companion.PLAY
+import com.quantum.quran.application.Cnstnt.Companion.PLAY
 import com.quantum.quran.services.AudioService
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper

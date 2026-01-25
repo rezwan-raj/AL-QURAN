@@ -2,7 +2,7 @@ package com.quantum.quran.constant
 
 import com.quantum.quran.model.JuzModel
 
-class Para {
+class P {
     fun Position(): ArrayList<JuzModel> {
         val data = ArrayList<JuzModel>()
         data.add(

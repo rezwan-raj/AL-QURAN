@@ -11,8 +11,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.adapter.ParaAyatAdap
-import com.quantum.quran.constant.Name
-import com.quantum.quran.constant.Para
+import com.quantum.quran.constant.Nam
+import com.quantum.quran.constant.P
 import com.quantum.quran.databinding.FParaAyatBinding
 import com.quantum.quran.model.ParaAyat
 import com.quantum.quran.model.Quran
@@ -72,8 +72,8 @@ class ParaAyat(private val position: Int) : Fragment() {
             surahHelper = SurahHelper(requireContext())
             quranHelper = QuranHelper(requireContext())
             QuranHelper(requireContext()).readAyatXtoY(
-                Para().Position()[position-1].startPos
-                , Para().Position()[position-1].endPos
+                P().Position()[position-1].startPos
+                , P().Position()[position-1].endPos
             ).forEach {
                 if (it.ayat == 1)
                     data.add(modelExchange(it, true))
@@ -94,8 +94,8 @@ class ParaAyat(private val position: Int) : Fragment() {
         adapterSurah?.notifyDataSetChanged()
         CoroutineScope(Dispatchers.Default).launch {
             QuranHelper(requireContext()).readAyatXtoY(
-                Para().Position()[position - 1].startPos,
-                Para().Position()[position - 1].endPos
+                P().Position()[position - 1].startPos,
+                P().Position()[position - 1].endPos
             ).forEach {
                 if (it.ayat == 1)
                     data.add(modelExchange(it, true))
@@ -121,8 +121,8 @@ class ParaAyat(private val position: Int) : Fragment() {
                 adapterSurah?.notifyDataSetChanged()
                 CoroutineScope(Dispatchers.Default).launch {
                     QuranHelper(requireContext()).readAyatXtoY(
-                        Para().Position()[position - 1].startPos,
-                        Para().Position()[position - 1].endPos
+                        P().Position()[position - 1].startPos,
+                        P().Position()[position - 1].endPos
                     ).forEach {
                         if (it.ayat == 1)
                             data.add(modelExchange(it, true))
@@ -142,8 +142,8 @@ class ParaAyat(private val position: Int) : Fragment() {
         data.clear()
         adapterSurah?.notifyDataSetChanged()
         QuranHelper(requireContext()).readAyatXtoY(
-            Para().Position()[position-1].startPos
-            , Para().Position()[position-1].endPos
+            P().Position()[position-1].startPos
+            , P().Position()[position-1].endPos
         ).forEach {
             if (it.ayat == 1)
                 data.add(modelExchange(it, true))
@@ -178,7 +178,7 @@ class ParaAyat(private val position: Int) : Fragment() {
                 englishPro = temp.englishPro,
                 englishT = temp.englishT,
                 name = s!!.name,
-                meaning = Name().data()[temp.surah-1],
+                meaning = Nam().data()[temp.surah-1],
                 details = "${s.revelation}   |   ${s.verse} VERSES"
             )
         } else {

@@ -10,11 +10,11 @@ import android.content.IntentFilter
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.MediaPlayer
-import com.quantum.quran.application.Constant.Companion.PLAY
+import com.quantum.quran.application.Cnstnt.Companion.PLAY
 import android.net.Uri
 import android.util.Log
-import com.quantum.quran.application.Constant
-import com.quantum.quran.application.Constant.Companion.PAUSE
+import com.quantum.quran.application.Cnstnt
+import com.quantum.quran.application.Cnstnt.Companion.PAUSE
 import com.quantum.quran.notification.Foreground
 import java.lang.Exception
 
@@ -98,10 +98,10 @@ class AudioService : Service(), MediaPlayer.OnCompletionListener,
 
     fun playAudio() {
         sendBroadcast(
-            Intent(Constant.SURAH+surah)
+            Intent(Cnstnt.SURAH+surah)
                 .putExtra("AYAT", current)
         )
-        Log.e("Player", Constant.SURAH+surah)
+        Log.e("Player", Cnstnt.SURAH+surah)
         try {
             mediaPlayer?.reset()
             mediaPlayer?.setDataSource(this, Uri.parse(playList[current]))
@@ -115,7 +115,7 @@ class AudioService : Service(), MediaPlayer.OnCompletionListener,
                     mediaPlayer?.prepare()
                     mediaPlayer?.start()
                     sendBroadcast(
-                        Intent(Constant.SURAH+surah)
+                        Intent(Cnstnt.SURAH+surah)
                             .putExtra("AYAT", current)
                     )
                 } else {

@@ -1,6 +1,6 @@
 package com.quantum.quran.application
 
-class Constant {
+class Cnstnt {
 
     companion object {
 

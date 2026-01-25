@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.quantum.quran.R
-import com.quantum.quran.application.Constant
+import com.quantum.quran.application.Cnstnt
 
 class Foreground(val activity: Context) {
 
@@ -20,7 +20,7 @@ class Foreground(val activity: Context) {
     @SuppressLint("LaunchActivityFromNotification")
     fun generateForegroundNotification(): Notification? {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val broadCast = Intent(Constant.PAUSE)
+            val broadCast = Intent(Cnstnt.PAUSE)
             val pendingIntent = PendingIntent.getBroadcast(
                 activity, 0, broadCast, PendingIntent.FLAG_IMMUTABLE
             )

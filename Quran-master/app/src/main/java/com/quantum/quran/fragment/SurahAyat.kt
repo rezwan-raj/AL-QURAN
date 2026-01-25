@@ -17,8 +17,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.R
 import com.quantum.quran.adapter.SurahAyatAdap
-import com.quantum.quran.application.Constant
-import com.quantum.quran.constant.Name
+import com.quantum.quran.application.Cnstnt
+import com.quantum.quran.constant.Nam
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.FSurahAyatBinding
@@ -72,7 +72,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
                     "  " + resources.getString(R.string.verses)
             adapterSurah = SurahAyatAdap(
                 requireContext(),
-                temp.name, Name().data()[position],
+                temp.name, Nam().data()[position],
                 t, data
             )
 
@@ -208,7 +208,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
 
     override fun onResume() {
         super.onResume()
-        Log.e("TAG", (Constant.SURAH+position).toString())
+        Log.e("TAG", (Cnstnt.SURAH+position).toString())
         ayatFollower = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 intent?.let {
@@ -220,7 +220,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
             }
         }
 
-        activity?.registerReceiver(ayatFollower, IntentFilter(Constant.SURAH+position))
+        activity?.registerReceiver(ayatFollower, IntentFilter(Cnstnt.SURAH+position))
     }
 
     override fun onPause() {

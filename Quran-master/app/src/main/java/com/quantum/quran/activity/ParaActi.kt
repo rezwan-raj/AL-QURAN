@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdap
-import com.quantum.quran.constant.Para
+import com.quantum.quran.constant.P
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.databinding.AParaBinding
 import com.quantum.quran.fragment.ParaAyat
@@ -44,7 +44,7 @@ class ParaActi : AppCompatActivity() {
         binding?.qPager?.adapter = PagerAdap(
             supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ).apply {
-            Para().Position().reversed()
+            P().Position().reversed()
                 .forEach {
                     addFragment(ParaAyat(it.paraNo))
                     binding?.tabLayout?.newTab()?.setText(
@@ -76,7 +76,7 @@ class ParaActi : AppCompatActivity() {
         })
 
         binding?.qPager?.offscreenPageLimit = 3
-        binding?.qPager?.currentItem = Para().Position().size -
+        binding?.qPager?.currentItem = P().Position().size -
                 intent.getIntExtra("PARA_NO", 0)
     }
 

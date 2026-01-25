@@ -1,6 +1,6 @@
 package com.quantum.quran.constant
 
-class Name {
+class Nam {
     fun data(): ArrayList<String> {
         val data = ArrayList<String>()
         data.add("The Opening")
