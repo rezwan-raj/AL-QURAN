@@ -70,10 +70,10 @@ class SurahAyatAdapter(val context: Context, val name: String, val meaning: Stri
             LayoutInflater.from(context)
                 .inflate(
                     if (viewType == 0)
-                        R.layout.layout_ayat_header
+                        R.layout.lout_ayat_header
                     else {
 //                        if (viewType == reading)
-                        R.layout.layout_ayat_reading
+                        R.layout.lout_ayat_reading
 //                        else  R.layout.layout_ayat_reading
                     },
                     parent, false

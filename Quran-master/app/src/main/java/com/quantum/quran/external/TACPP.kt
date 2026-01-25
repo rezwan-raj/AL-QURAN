@@ -17,7 +17,7 @@ class TACPP(val context: Activity) {
     fun launch(type: Int) {
         val searchSheetDialog = BottomSheetDialog(context, if (ApplicationData(context).darkTheme)
             R.style.bottomSheetDark else R.style.bottomSheet)
-        searchSheetDialog.setContentView(R.layout.privacy_sheet)
+        searchSheetDialog.setContentView(R.layout.pri_sheet)
 
         searchSheetDialog.setOnShowListener {
             val bottomSheetDialog = it as BottomSheetDialog

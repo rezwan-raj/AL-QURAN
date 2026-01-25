@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.a_splash)
 
         launch()
     }

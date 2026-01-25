@@ -8,19 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quantum.quran.R
 import com.quantum.quran.database.ApplicationData
-import com.quantum.quran.databinding.ActivityLanguageBinding
+import com.quantum.quran.databinding.ALanguageBinding
 import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
 import java.util.*
 
 class LanguageActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLanguageBinding
+    private lateinit var binding: ALanguageBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        binding = ActivityLanguageBinding.inflate(layoutInflater)
+        binding = ALanguageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.back.setOnClickListener { finish() }
 

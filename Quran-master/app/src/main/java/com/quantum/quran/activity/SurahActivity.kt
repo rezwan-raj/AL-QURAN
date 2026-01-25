@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.adapter.PagerAdapter
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
-import com.quantum.quran.databinding.ActivitySurahBinding
+import com.quantum.quran.databinding.ASurahBinding
 import com.quantum.quran.fragment.SurahAyat
 import com.quantum.quran.sql.SurahHelper
 import com.quantum.quran.theme.ApplicationTheme
@@ -31,12 +31,12 @@ class SurahActivity : AppCompatActivity() {
         }
     }
     private var surahNo: Int? = null
-    private var binding: ActivitySurahBinding? = null
+    private var binding: ASurahBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        binding = ActivitySurahBinding.inflate(layoutInflater)
+        binding = ASurahBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.back?.setOnClickListener { finish() }
 

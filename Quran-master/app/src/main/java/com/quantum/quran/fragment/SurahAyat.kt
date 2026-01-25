@@ -21,7 +21,7 @@ import com.quantum.quran.application.Constant
 import com.quantum.quran.constant.Name
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
-import com.quantum.quran.databinding.FragmentSurahAyatBinding
+import com.quantum.quran.databinding.FSurahAyatBinding
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
@@ -45,12 +45,12 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
     private var ayatFollower: BroadcastReceiver? = null
     private lateinit var layoutManager: LinearLayoutManager
     private var adapterSurah: SurahAyatAdapter? = null
-    private var binding: FragmentSurahAyatBinding? = null
+    private var binding: FSurahAyatBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        binding = FragmentSurahAyatBinding.inflate(inflater, container, false)
+        binding = FSurahAyatBinding.inflate(inflater, container, false)
         binding?.searchIcon?.clipToOutline = true
 
         layoutManager = LinearLayoutManager(requireContext())

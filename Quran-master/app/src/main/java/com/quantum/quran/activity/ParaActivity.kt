@@ -11,7 +11,7 @@ import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdapter
 import com.quantum.quran.constant.Para
 import com.quantum.quran.database.ApplicationData
-import com.quantum.quran.databinding.ActivityParaBinding
+import com.quantum.quran.databinding.AParaBinding
 import com.quantum.quran.fragment.ParaAyat
 import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
@@ -30,12 +30,12 @@ class ParaActivity : AppCompatActivity() {
             )
         }
     }
-    private var binding: ActivityParaBinding? = null
+    private var binding: AParaBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        binding = ActivityParaBinding.inflate(layoutInflater)
+        binding = AParaBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.back?.setOnClickListener { finish() }
 

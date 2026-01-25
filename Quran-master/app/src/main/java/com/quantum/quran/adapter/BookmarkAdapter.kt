@@ -57,7 +57,7 @@ class BookmarkAdapter(val context: Context, val data: ArrayList<Quran>,
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
-                    R.layout.layout_ayat,
+                    R.layout.l_ayat,
                     parent, false
                 )
         )

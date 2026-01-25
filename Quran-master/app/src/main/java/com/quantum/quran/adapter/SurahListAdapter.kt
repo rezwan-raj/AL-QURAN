@@ -30,7 +30,7 @@ class SurahListAdapter(val context: Context, val data: ArrayList<SurahList>):
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
-                    R.layout.layout_surah_name,
+                    R.layout.lout_surah_name,
                     parent, false
                 )
         )

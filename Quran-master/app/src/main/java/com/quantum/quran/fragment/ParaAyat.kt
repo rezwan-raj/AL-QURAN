@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.adapter.ParaAyatAdapter
 import com.quantum.quran.constant.Name
 import com.quantum.quran.constant.Para
-import com.quantum.quran.databinding.FragmentParaAyatBinding
+import com.quantum.quran.databinding.FParaAyatBinding
 import com.quantum.quran.model.ParaAyat
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
@@ -30,12 +30,12 @@ class ParaAyat(private val position: Int) : Fragment() {
     private var surahHelper: SurahHelper? = null
     private var quranHelper: QuranHelper? = null
     private var adapterSurah: ParaAyatAdapter? = null
-    private var binding: FragmentParaAyatBinding? = null
+    private var binding: FParaAyatBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        binding = FragmentParaAyatBinding.inflate(inflater, container, false)
+        binding = FParaAyatBinding.inflate(inflater, container, false)
 
         initiate()
 

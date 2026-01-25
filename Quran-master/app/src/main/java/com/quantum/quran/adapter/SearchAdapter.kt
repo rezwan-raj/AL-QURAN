@@ -67,8 +67,8 @@ class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
             LayoutInflater.from(context)
                 .inflate(
                     when(viewType) {
-                        SURAH -> R.layout.layout_surah_name
-                        else -> R.layout.layout_ayat
+                        SURAH -> R.layout.lout_surah_name
+                        else -> R.layout.l_ayat
                     }, parent, false
                 ), viewType
         )

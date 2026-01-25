@@ -54,7 +54,7 @@ class AudioProcess(val activity: Activity) {
                 downloads = requiredDownload.size
                 activity.runOnUiThread {
                     dialog = Dialog(activity)
-                    dialog?.setContentView(R.layout.dialog_download)
+                    dialog?.setContentView(R.layout.dialog_downld)
                     dialog?.setCancelable(false)
                     dialog?.findViewById<TextView>(R.id.title)
                         ?.text = "Surah: " + SurahHelper(activity).readDataAt(sur)?.name

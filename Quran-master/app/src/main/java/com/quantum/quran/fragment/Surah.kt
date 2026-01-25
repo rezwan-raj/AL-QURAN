@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.adapter.SurahListAdapter
-import com.quantum.quran.databinding.FragmentSurahBinding
+import com.quantum.quran.databinding.FSurahBinding
 import com.quantum.quran.model.SurahList
 import com.quantum.quran.sql.SurahHelper
 import kotlinx.coroutines.CoroutineScope
@@ -18,12 +18,12 @@ class Surah : Fragment() {
 
     private val data = ArrayList<SurahList>()
     private var adapter: SurahListAdapter? = null
-    private var binding: FragmentSurahBinding? = null
+    private var binding: FSurahBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        binding = FragmentSurahBinding.inflate(inflater, container, false)
+        binding = FSurahBinding.inflate(inflater, container, false)
 
         adapter = SurahListAdapter(requireContext(), data)
 

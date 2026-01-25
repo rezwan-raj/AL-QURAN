@@ -36,7 +36,7 @@ class Search(val context: Activity) {
     fun searchSheet() {
         val searchSheetDialog = BottomSheetDialog(context, if (ApplicationData(context).darkTheme)
             R.style.bottomSheetDark else R.style.bottomSheet)
-        searchSheetDialog.setContentView(R.layout.search_sheet)
+        searchSheetDialog.setContentView(R.layout.sear_sheet)
 
         searchSheetDialog.setOnShowListener {
             val bottomSheetDialog = it as BottomSheetDialog

@@ -30,7 +30,7 @@ class ParaListAdapter(val context: Context, val data: ArrayList<JuzModel>):
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
-                    R.layout.layout_para,
+                    R.layout.lout_para,
                     parent, false
                 )
         )

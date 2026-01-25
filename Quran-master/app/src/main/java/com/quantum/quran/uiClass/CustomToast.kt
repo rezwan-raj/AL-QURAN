@@ -17,7 +17,7 @@ class CustomToast(private val activity: Activity) {
     fun show(text: String, type: Int) {
         activity.run {
             val layout = layoutInflater.inflate(
-                R.layout.layout_toast,
+                R.layout.lout_toast,
                 findViewById(R.id.toast_linear)
             )
             val  toastLayout = layout.findViewById<ImageView>(R.id.image)

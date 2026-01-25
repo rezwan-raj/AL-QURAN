@@ -8,16 +8,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.adapter.ParaListAdapter
 import com.quantum.quran.constant.Para
-import com.quantum.quran.databinding.FragmentParaBinding
+import com.quantum.quran.databinding.FParaBinding
 
 class Para : Fragment() {
 
-    private var binding: FragmentParaBinding? = null
+    private var binding: FParaBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        binding = FragmentParaBinding.inflate(inflater, container, false)
+        binding = FParaBinding.inflate(inflater, container, false)
 
         binding?.paraRecycler?.layoutManager = LinearLayoutManager(requireContext())
         binding?.paraRecycler?.adapter = ParaListAdapter(

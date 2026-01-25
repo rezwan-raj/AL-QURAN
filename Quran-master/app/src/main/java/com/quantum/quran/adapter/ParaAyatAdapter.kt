@@ -73,8 +73,8 @@ class ParaAyatAdapter(val context: Context, val data: ArrayList<ParaAyat>)
             LayoutInflater.from(context)
                 .inflate(
                     if (viewType == BISMILLAH)
-                        R.layout.layout_ayat_header
-                    else R.layout.layout_ayat,
+                        R.layout.lout_ayat_header
+                    else R.layout.l_ayat,
                     parent, false
                 ), viewType
         )

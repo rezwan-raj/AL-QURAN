@@ -15,7 +15,7 @@ import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdapter
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
-import com.quantum.quran.databinding.ActivityQuranMainBinding
+import com.quantum.quran.databinding.AQuranMainBinding
 import com.quantum.quran.external.Search
 import com.quantum.quran.fragment.Bookmark
 import com.quantum.quran.fragment.Para
@@ -43,7 +43,7 @@ class QuranMainActivity : AppCompatActivity() {
             }
         }
 
-    private var binding: ActivityQuranMainBinding? = null
+    private var binding: AQuranMainBinding? = null
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +54,7 @@ class QuranMainActivity : AppCompatActivity() {
             lang = language
             currentTheme = primaryColor
         }
-        binding = ActivityQuranMainBinding.inflate(layoutInflater)
+        binding = AQuranMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.let {
             it.settings.clipToOutline = true

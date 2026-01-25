@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -15,10 +14,8 @@ import android.view.View
 import android.widget.SeekBar
 import androidx.activity.result.contract.ActivityResultContracts
 import com.quantum.quran.R
-import com.quantum.quran.application.Constant.Companion.EMAIL
 import com.quantum.quran.database.ApplicationData
-import com.quantum.quran.databinding.ActivitySettingsBinding
-import com.quantum.quran.external.TACPP
+import com.quantum.quran.databinding.ASettingsBinding
 import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
 import java.util.*
@@ -26,7 +23,7 @@ import java.util.*
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var applicationData: ApplicationData
-    private lateinit var binding: ActivitySettingsBinding
+    private lateinit var binding: ASettingsBinding
 
 
     private val startForResult =
@@ -41,7 +38,7 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ApplicationTheme(this)
-        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        binding = ASettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.back.clipToOutline = true
         binding.green.clipToOutline = true
@@ -77,7 +74,7 @@ class SettingsActivity : AppCompatActivity() {
         binding.about.setOnClickListener {
             startActivity(
                 Intent(
-                    this, AboutActivity::class.java
+                    this, AboutActi::class.java
                 )
             )
         }

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.`interface`.Bookmark
 import com.quantum.quran.adapter.BookmarkAdapter
-import com.quantum.quran.databinding.FragmentBookmarkBinding
+import com.quantum.quran.databinding.FBookmarkBinding
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
 import kotlinx.coroutines.CoroutineScope
@@ -19,12 +19,12 @@ class Bookmark : Fragment() {
 
     private val data = ArrayList<Quran>()
     private var adapter: BookmarkAdapter? = null
-    private var binding: FragmentBookmarkBinding? = null
+    private var binding: FBookmarkBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        binding = FragmentBookmarkBinding.inflate(inflater, container, false)
+        binding = FBookmarkBinding.inflate(inflater, container, false)
 
         adapter = BookmarkAdapter(requireContext(), data
             , object : Bookmark {
