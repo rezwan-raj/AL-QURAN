@@ -11,10 +11,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.quantum.quran.R
 import com.quantum.quran.application.Cnstnt.Companion.PLAY
-import com.quantum.quran.services.AudioService
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.uiClass.CustomToast
+import com.quantum.quran.services.Aodio_Servi
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.uiClass.Custo_Toa
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +24,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 @SuppressLint("SetTextI18n")
-class AudioProcess(val activity: Activity) {
+class Aodio_Proce(val activity: Activity) {
 
     private var surah = 0
     private var current = 0
@@ -42,7 +42,7 @@ class AudioProcess(val activity: Activity) {
         val directory = activity.getExternalFilesDir("Audio")?.path
 
         CoroutineScope(Dispatchers.IO).launch {
-            QuranHelper(activity).readSurahNo(sur).forEach {
+            `Al-Quran_H`(activity).readSurahNo(sur).forEach {
                 val location = "$directory/${it.pos + 1}.mp3"
                 if (!File(location).exists())
                     requiredDownload.add(it.pos + 1)
@@ -57,7 +57,7 @@ class AudioProcess(val activity: Activity) {
                     dialog?.setContentView(R.layout.dialog_downld)
                     dialog?.setCancelable(false)
                     dialog?.findViewById<TextView>(R.id.title)
-                        ?.text = "Surah: " + SurahHelper(activity).readDataAt(sur)?.name
+                        ?.text = "Surah: " + Su_R_Ah_H(activity).readDataAt(sur)?.name
                     dialog?.findViewById<TextView>(R.id.download_total)
                         ?.text = "0/$downloads"
                     dialog?.findViewById<ProgressBar>(R.id.download_progress)
@@ -97,7 +97,7 @@ class AudioProcess(val activity: Activity) {
                 downloadAudio(requiredDownload[0])
             } else {
                 dialog?.dismiss()
-                CustomToast(activity).show(e.toString(), CustomToast.TOAST_NEGATIVE)
+                Custo_Toa(activity).show(e.toString(), Custo_Toa.TOAST_NEGATIVE)
             }
             Log.e("Error", e.toString())
         } finally {
@@ -108,7 +108,7 @@ class AudioProcess(val activity: Activity) {
     private fun serviceRunning(): Boolean {
         val manager = activity.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
         for (service in manager!!.getRunningServices(Int.MAX_VALUE)) {
-            if (AudioService::class.java.name == service.service.className) {
+            if (Aodio_Servi::class.java.name == service.service.className) {
                 return true
             }
         }
@@ -125,7 +125,7 @@ class AudioProcess(val activity: Activity) {
             )
         } else {
             activity.startService(
-                Intent(activity, AudioService::class.java)
+                Intent(activity, Aodio_Servi::class.java)
                     .putExtra("SURAH", surah)
                     .putExtra("CURRENT", current)
                     .putExtra("LIST", playList)

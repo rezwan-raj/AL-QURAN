@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.adapter.SurahListAdap
 import com.quantum.quran.databinding.FSurahBinding
-import com.quantum.quran.model.SurahList
-import com.quantum.quran.sql.SurahHelper
+import com.quantum.quran.model.Su_R_Ah_Li
+import com.quantum.quran.sql.Su_R_Ah_H
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class Surah : Fragment() {
+class Su_R_Ah : Fragment() {
 
-    private val data = ArrayList<SurahList>()
+    private val data = ArrayList<Su_R_Ah_Li>()
     private var adapter: SurahListAdap? = null
     private var binding: FSurahBinding? = null
 
@@ -38,7 +38,7 @@ class Surah : Fragment() {
     private fun loadData() {
         CoroutineScope(Dispatchers.Default).launch {
             data.clear()
-            data.addAll(SurahHelper(requireContext()).readData())
+            data.addAll(Su_R_Ah_H(requireContext()).readData())
             activity?.runOnUiThread { adapter?.notifyItemRangeChanged(0, data.size) }
         }
     }

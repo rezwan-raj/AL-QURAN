@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:elevation="4dp"
-        android:background="@drawable/ayat_header_background">
+        android:background="@drawable/a_y_at_h_bckgrnd">
 
         <TextView
             android:id="@+id/ayat_no"
@@ -51,7 +51,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/orange"
-            android:background="@drawable/about_background"
+            android:background="@drawable/abo_bckgro"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?selectableItemBackground"
@@ -70,7 +70,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/orange"
-            android:background="@drawable/about_background"
+            android:background="@drawable/abo_bckgro"
             android:padding="@dimen/_6sdp"
             android:clickable="true"
             android:focusable="true"
@@ -86,7 +86,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/orange"
-            android:background="@drawable/about_background"
+            android:background="@drawable/abo_bckgro"
             android:padding="@dimen/_6sdp"
             android:clickable="true"
             android:focusable="true"

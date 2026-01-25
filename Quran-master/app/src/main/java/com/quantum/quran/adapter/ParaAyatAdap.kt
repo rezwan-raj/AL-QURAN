@@ -13,15 +13,15 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.ParaAyat
-import com.quantum.quran.model.Quran
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
+import com.quantum.quran.model.Pa_R_Ah_Ay
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
+class ParaAyatAdap(val context: Context, val data: ArrayList<Pa_R_Ah_Ay>)
     : RecyclerView.Adapter<ParaAyatAdap.ViewHolder>() {
 
     companion object {
@@ -29,7 +29,7 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
         const val DEFAULT = 0
     }
 
-    private val quran = QuranHelper(context)
+    private val quran = `Al-Quran_H`(context)
 
     inner class ViewHolder(view: View,  val type: Int): RecyclerView.ViewHolder(view) {
         var name: TextView? = null
@@ -89,7 +89,7 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
                         pron?.text = it.latin
 //            holder.translation?.text = data[position].englishT
 //                    translation?.text = it.terjemahan
-                        surahName?.text = SurahHelper(context).readDataAt(it.surah)?.name
+                        surahName?.text = Su_R_Ah_H(context).readDataAt(it.surah)?.name
                         translation?.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                             Html.fromHtml(it.terjemahan, Html.FROM_HTML_MODE_COMPACT)
                         } else Html.fromHtml(it.terjemahan)
@@ -112,8 +112,8 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
         return data.size
     }
 
-    private fun modelExchange(temp: ParaAyat): Quran {
-        return Quran(
+    private fun modelExchange(temp: Pa_R_Ah_Ay): `AL-QURAN` {
+        return `AL-QURAN`(
             pos = temp.pos,
             surah = temp.surah,
             ayat = temp.ayat,
@@ -127,9 +127,9 @@ class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
         )
     }
 
-    private fun maintainClicks(share: ImageView?, bookmark: ImageView?, it: ParaAyat) {
+    private fun maintainClicks(share: ImageView?, bookmark: ImageView?, it: Pa_R_Ah_Ay) {
         share?.setOnClickListener { v ->
-            var text = "Surah-> ${SurahHelper(context).readDataAt(it.surah)!!.name}," +
+            var text = "Surah-> ${Su_R_Ah_H(context).readDataAt(it.surah)!!.name}," +
                     " Ayat-> ${it.ayat}\n\n"
             text += if (Application_D(context).arabic) it.utsmani else it.indopak
             text += "\n\nঅর্থ :  "+when(Application_D(context).translation) {

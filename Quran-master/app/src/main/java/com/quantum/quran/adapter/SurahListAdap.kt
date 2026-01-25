@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.activity.SurahActi
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.SurahList
+import com.quantum.quran.model.Su_R_Ah_Li
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SurahListAdap(val context: Context, val data: ArrayList<SurahList>):
+class SurahListAdap(val context: Context, val data: ArrayList<Su_R_Ah_Li>):
     RecyclerView.Adapter<SurahListAdap.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {

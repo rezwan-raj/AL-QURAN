@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.quantum.quran.`interface`.Bookmark
+import com.quantum.quran.`interface`.B_Mark
 import com.quantum.quran.adapter.BookmarkAdap
 import com.quantum.quran.databinding.FBookmarkBinding
-import com.quantum.quran.model.Quran
-import com.quantum.quran.sql.QuranHelper
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.sql.`Al-Quran_H`
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class Bookmark : Fragment() {
+class B_Mark : Fragment() {
 
-    private val data = ArrayList<Quran>()
+    private val data = ArrayList<`AL-QURAN`>()
     private var adapter: BookmarkAdap? = null
     private var binding: FBookmarkBinding? = null
 
@@ -27,7 +27,7 @@ class Bookmark : Fragment() {
         binding = FBookmarkBinding.inflate(inflater, container, false)
 
         adapter = BookmarkAdap(requireContext(), data
-            , object : Bookmark {
+            , object : B_Mark {
                 override fun removed(pos: Int) {
                     data.removeAt(pos)
                     adapter?.notifyItemRemoved(pos)
@@ -47,7 +47,7 @@ class Bookmark : Fragment() {
         super.onResume()
         CoroutineScope(Dispatchers.Default).launch {
             data.clear()
-            data.addAll(QuranHelper(requireContext()).readBookmark())
+            data.addAll(`Al-Quran_H`(requireContext()).readBookmark())
             activity?.runOnUiThread {
                 binding?.noBookmark?.visibility =
                     if (data.size > 0) View.GONE

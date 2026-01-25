@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quantum.quran.databinding.AQuranBinding
 import com.quantum.minar.database.User_D
-import com.quantum.quran.theme.ApplicationTheme
+import com.quantum.quran.theme.Appli_Them
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
@@ -14,7 +14,7 @@ class QuranActi : AppCompatActivity() {
     private var binding: AQuranBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         binding = AQuranBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.quranVector?.clipToOutline = true

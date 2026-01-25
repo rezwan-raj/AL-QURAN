@@ -11,7 +11,7 @@ import androidx.core.app.NotificationCompat
 import com.quantum.quran.R
 import com.quantum.quran.application.Cnstnt
 
-class Foreground(val activity: Context) {
+class F_Ground(val activity: Context) {
 
     private var iconNotification: Bitmap? = null
     private var notification: Notification? = null

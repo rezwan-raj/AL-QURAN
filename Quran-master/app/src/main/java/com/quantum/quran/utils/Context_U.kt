@@ -8,7 +8,7 @@ import android.os.Build
 import android.os.LocaleList
 import java.util.*
 
-class ContextUtils(base: Context) : ContextWrapper(base) {
+class Context_U(base: Context) : ContextWrapper(base) {
 
     companion object {
 
@@ -28,7 +28,7 @@ class ContextUtils(base: Context) : ContextWrapper(base) {
             } else {
                 resources.updateConfiguration(configuration, resources.displayMetrics)
             }
-            return ContextUtils(context)
+            return Context_U(context)
         }
     }
 }

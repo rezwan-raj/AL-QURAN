@@ -13,10 +13,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.quantum.quran.R
 import com.quantum.quran.adapter.SearchAdap
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.SearchModel
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.utils.KeyboardUtils
+import com.quantum.quran.model.Sea_Mod
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.utils.Keyb_Uti
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,13 +24,13 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Search(val context: Activity) {
+class Srch(val context: Activity) {
 
     private var search = ""
     private var option: RadioGroup? = null
     private var adapter: SearchAdap? = null
     private var searching: ProgressBar? = null
-    private val data = ArrayList<SearchModel>()
+    private val data = ArrayList<Sea_Mod>()
     private var recyclerView: RecyclerView? = null
 
     fun searchSheet() {
@@ -156,12 +156,12 @@ class Search(val context: Activity) {
             data.clear()
             when(option?.checkedRadioButtonId) {
                 R.id.surah -> {
-                    val a = SurahHelper(context).readData().filter {
+                    val a = Su_R_Ah_H(context).readData().filter {
                         it.pos == no
                     }
                     a.forEach {
                         data.add(
-                            SearchModel(
+                            Sea_Mod(
                                 type = SearchAdap.SURAH,
                                 pos = it.pos,
                                 name = it.name,
@@ -173,12 +173,12 @@ class Search(val context: Activity) {
                     }
                 }
                 R.id.ayat -> {
-                    val a = QuranHelper(context).readData().filter {
+                    val a = `Al-Quran_H`(context).readData().filter {
                         it.ayat == no
                     }
                     a.forEach {
                         data.add(
-                            SearchModel(
+                            Sea_Mod(
                                 type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
@@ -217,12 +217,12 @@ class Search(val context: Activity) {
             data.clear()
             when(option?.checkedRadioButtonId) {
                 R.id.surah -> {
-                    val a = SurahHelper(context).readData().filter {
+                    val a = Su_R_Ah_H(context).readData().filter {
                         it.name.contains(filter)
                     }
                     a.forEach {
                         data.add(
-                            SearchModel(
+                            Sea_Mod(
                                 type = SearchAdap.SURAH,
                                 pos = it.pos,
                                 name = it.name,
@@ -235,7 +235,7 @@ class Search(val context: Activity) {
                 }
 
                 R.id.ayat -> {
-                    val a = QuranHelper(context).readData().filter {
+                    val a = `Al-Quran_H`(context).readData().filter {
                         it.indopak.contains(filter) //|| it.utsmani.contains(filter)
                     }
                     a.forEach {
@@ -244,7 +244,7 @@ class Search(val context: Activity) {
                         val indopak = "${temp.substring(0, start)}<b><font color=#2979FF>" +
                                 "$filter</font></b>${temp.substring(start+filter.length)}"
                         data.add(
-                            SearchModel(
+                            Sea_Mod(
                                 type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
@@ -265,7 +265,7 @@ class Search(val context: Activity) {
                 }
 
                 R.id.meaning -> {
-                    val a = QuranHelper(context).readData().filter {
+                    val a = `Al-Quran_H`(context).readData().filter {
                         when(Application_D(context).translation) {
                             Application_D.TAISIRUL -> it.terjemahan
                             Application_D.MUHIUDDIN -> it.jalalayn
@@ -283,7 +283,7 @@ class Search(val context: Activity) {
                         val translation = "${temp.substring(0, start)}<b><font color=#2979FF>" +
                                 "${temp.substring(start, start+filter.length)}</font></b>${temp.substring(start+filter.length)}"
                         data.add(
-                            SearchModel(
+                            Sea_Mod(
                                 type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
@@ -313,7 +313,7 @@ class Search(val context: Activity) {
     private fun closeKeyboard(edit: EditText?) {
         edit?.let {
             it.clearFocus()
-            KeyboardUtils.hideKeyboard(it)
+            Keyb_Uti.hideKeyboard(it)
         }
     }
 }

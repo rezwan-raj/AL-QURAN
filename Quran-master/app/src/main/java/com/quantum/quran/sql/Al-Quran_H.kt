@@ -5,9 +5,9 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.quantum.quran.model.Quran
+import com.quantum.quran.model.`AL-QURAN`
 
-class QuranHelper (context: Context)
+class `Al-Quran_H` (context: Context)
     : SQLiteOpenHelper(context, "Al_Quran.db", null, 1) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(
@@ -42,7 +42,7 @@ class QuranHelper (context: Context)
 //    "englishPro TEXT, " +
 //    "englishTran TEXT" +
 
-    fun insertData(data: Quran, mark: String): Boolean {
+    fun insertData(data: `AL-QURAN`, mark: String): Boolean {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("pos", data.pos)
@@ -59,15 +59,15 @@ class QuranHelper (context: Context)
         return true
     }
 
-    fun readSurahNo(pos: Int): ArrayList<Quran> {
+    fun readSurahNo(pos: Int): ArrayList<`AL-QURAN`> {
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Quran WHERE surah == $pos"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
-        val data = ArrayList<Quran>()
+        val data = ArrayList<`AL-QURAN`>()
         if (cursor.moveToFirst()) {
             do {
                 data.add(
-                    Quran(
+                    `AL-QURAN`(
                         pos = cursor.getInt(0),
                         surah = cursor.getInt(1),
                         ayat = cursor.getInt(2),
@@ -94,15 +94,15 @@ class QuranHelper (context: Context)
         return data
     }
 
-    fun readBookmark(): ArrayList<Quran> {
+    fun readBookmark(): ArrayList<`AL-QURAN`> {
         val db = this.readableDatabase
         val selectQuery = "SELECT * FROM Quran WHERE englishPro == ?"
         val cursor: Cursor = db.rawQuery(selectQuery,  arrayOf("T"))
-        val data = ArrayList<Quran>()
+        val data = ArrayList<`AL-QURAN`>()
         if (cursor.moveToFirst()) {
             do {
                 data.add(
-                    Quran(
+                    `AL-QURAN`(
                         pos = cursor.getInt(0),
                         surah = cursor.getInt(1),
                         ayat = cursor.getInt(2),
@@ -129,13 +129,13 @@ class QuranHelper (context: Context)
         return data
     }
 
-    fun readAyatNo(pos: Int): Quran? {
+    fun readAyatNo(pos: Int): `AL-QURAN`? {
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Quran WHERE pos == $pos"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
-        var data: Quran? = null
+        var data: `AL-QURAN`? = null
         if (cursor.moveToFirst()) {
-            data = Quran(
+            data = `AL-QURAN`(
                 pos = cursor.getInt(0),
                 surah = cursor.getInt(1),
                 ayat = cursor.getInt(2),
@@ -152,15 +152,15 @@ class QuranHelper (context: Context)
         return data
     }
 
-    fun readAyatXtoY(x: Int, y: Int): ArrayList<Quran> {
+    fun readAyatXtoY(x: Int, y: Int): ArrayList<`AL-QURAN`> {
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Quran WHERE pos BETWEEN $x AND $y"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
-        val data = ArrayList<Quran>()
+        val data = ArrayList<`AL-QURAN`>()
         if (cursor.moveToFirst()) {
             do {
                 data.add(
-                    Quran(
+                    `AL-QURAN`(
                         pos = cursor.getInt(0),
                         surah = cursor.getInt(1),
                         ayat = cursor.getInt(2),
@@ -179,15 +179,15 @@ class QuranHelper (context: Context)
         return data
     }
 
-    fun readData(): ArrayList<Quran> {
+    fun readData(): ArrayList<`AL-QURAN`> {
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Quran"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
-        val data = ArrayList<Quran>()
+        val data = ArrayList<`AL-QURAN`>()
         if (cursor.moveToFirst()) {
             do {
                 data.add(
-                    Quran(
+                    `AL-QURAN`(
                         pos = cursor.getInt(0),
                         surah = cursor.getInt(1),
                         ayat = cursor.getInt(2),

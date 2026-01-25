@@ -203,8 +203,8 @@
     </style>
 
     <style name="Chip_Style" parent="@style/Widget.MaterialComponents.Chip.Choice">
-        <item name="chipBackgroundColor">@color/background_chip_color</item>
-        <item name="android:textColor">@color/text_chip_color</item>
+        <item name="chipBackgroundColor">@color/backg_chip_colour</item>
+        <item name="android:textColor">@color/txt_c_colour</item>
         <item name="checkedIconVisible">true</item>
         <item name="checkedIcon">@drawable/ic_check</item>
     </style>

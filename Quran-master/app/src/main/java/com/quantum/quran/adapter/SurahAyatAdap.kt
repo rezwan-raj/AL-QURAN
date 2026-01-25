@@ -17,19 +17,19 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.Quran
-import com.quantum.quran.process.AudioProcess
-import com.quantum.quran.sql.QuranHelper
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.process.Aodio_Proce
+import com.quantum.quran.sql.`Al-Quran_H`
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
-                    private val details: String, val data: ArrayList<Quran>):
+                    private val details: String, val data: ArrayList<`AL-QURAN`>):
     RecyclerView.Adapter<SurahAyatAdap.ViewHolder>() {
 
     private var reading = -1
-    private val quran = QuranHelper(context)
+    private val quran = `Al-Quran_H`(context)
 
     inner class ViewHolder(view: View, val type: Int): RecyclerView.ViewHolder(view) {
         var name: TextView? = null
@@ -117,7 +117,7 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
         }
     }
 
-    private fun translation(translation: TextView?, it: Quran) {
+    private fun translation(translation: TextView?, it: `AL-QURAN`) {
         translation?.text =
             when(Application_D(context).translation) {
                 Application_D.TAISIRUL -> textToHtml(it.terjemahan)
@@ -130,7 +130,7 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
             }
     }
 
-    private fun setPron(pron: TextView?, it: Quran) {
+    private fun setPron(pron: TextView?, it: `AL-QURAN`) {
         pron?.text =
             when(Application_D(context).translation) {
                 Application_D.TAISIRUL -> textToHtml(it.terjemahan)
@@ -157,7 +157,7 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
         else Html.fromHtml(it)
     }
 
-    private fun maintainClicks(play: ImageView?, share: ImageView?, bookmark: ImageView?, it: Quran) {
+    private fun maintainClicks(play: ImageView?, share: ImageView?, bookmark: ImageView?, it: `AL-QURAN`) {
         share?.setOnClickListener { v->
             var text = "${context.resources.getString(R.string.surah)}: $name, " +
                     "${context.resources.getString(R.string.ayat)}: ${it.ayat}\n\n"
@@ -203,7 +203,7 @@ class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
         }
 
         play?.setOnClickListener { _->
-            AudioProcess(context as Activity).play(it.surah, it.ayat)
+            Aodio_Proce(context as Activity).play(it.surah, it.ayat)
         }
     }
 

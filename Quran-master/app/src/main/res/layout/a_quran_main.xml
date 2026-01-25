@@ -126,7 +126,7 @@
                 android:layout_marginBottom="@dimen/_8sdp"
                 app:tint="@color/white"
                 android:padding="4dp"
-                android:background="@drawable/about_background"
+                android:background="@drawable/abo_bckgro"
                 android:src="@drawable/ic_baseline_chevron_right_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -177,7 +177,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?selectableItemBackground"
-        android:background="@drawable/about_background"
+        android:background="@drawable/abo_bckgro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tab_layout"
         app:layout_constraintBottom_toBottomOf="@id/tab_layout"/>

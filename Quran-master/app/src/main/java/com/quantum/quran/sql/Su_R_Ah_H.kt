@@ -6,9 +6,9 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.quantum.quran.R
-import com.quantum.quran.model.SurahList
+import com.quantum.quran.model.Su_R_Ah_Li
 
-class SurahHelper(val context: Context) :
+class Su_R_Ah_H(val context: Context) :
     SQLiteOpenHelper(context, "SurahList.db", null, 1) {
 
     val names = context.resources.getStringArray(R.array.surah_name)
@@ -28,7 +28,7 @@ class SurahHelper(val context: Context) :
         onCreate(db)
     }
 
-    fun insertData(data: ArrayList<SurahList>): Boolean {
+    fun insertData(data: ArrayList<Su_R_Ah_Li>): Boolean {
         val db = this.writableDatabase
         for (x in data) {
             val contentValues = ContentValues()
@@ -42,14 +42,14 @@ class SurahHelper(val context: Context) :
         return true
     }
 
-    fun readDataAt(pos: Int): SurahList? {
-        var data: SurahList? = null
+    fun readDataAt(pos: Int): Su_R_Ah_Li? {
+        var data: Su_R_Ah_Li? = null
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Surah WHERE id == $pos"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
         if (cursor.moveToFirst()) {
             do {
-                data = SurahList(
+                data = Su_R_Ah_Li(
                     pos = cursor.getInt(0),
                     name =  names[pos-1], //cursor.getString(1),
                     revelation = cursor.getString(2),
@@ -62,15 +62,15 @@ class SurahHelper(val context: Context) :
         return data
     }
 
-    fun readData(): ArrayList<SurahList> {
-        val data = ArrayList<SurahList>()
+    fun readData(): ArrayList<Su_R_Ah_Li> {
+        val data = ArrayList<Su_R_Ah_Li>()
         val db = this.readableDatabase
         val selectQuery = "SELECT  * FROM Surah"
         val cursor: Cursor = db.rawQuery(selectQuery, null)
         if (cursor.moveToFirst()) {
             do {
                 data.add(
-                    SurahList(
+                    Su_R_Ah_Li(
                         pos = cursor.getInt(0),
                         name = names[data.size],//cursor.getString(1),
                         revelation = cursor.getString(2),

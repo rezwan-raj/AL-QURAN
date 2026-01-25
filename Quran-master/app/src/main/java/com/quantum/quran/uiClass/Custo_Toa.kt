@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import com.quantum.quran.R
 
-class CustomToast(private val activity: Activity) {
+class Custo_Toa(private val activity: Activity) {
 
     companion object {
         const val TOAST_POSITIVE = 0

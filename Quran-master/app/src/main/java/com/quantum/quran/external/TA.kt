@@ -11,7 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
 
-class TACPP(val context: Activity) {
+class TA(val context: Activity) {
 
     @SuppressLint("SetJavaScriptEnabled")
     fun launch(type: Int) {

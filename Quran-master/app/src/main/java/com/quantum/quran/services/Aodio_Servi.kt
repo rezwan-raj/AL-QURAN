@@ -15,10 +15,10 @@ import android.net.Uri
 import android.util.Log
 import com.quantum.quran.application.Cnstnt
 import com.quantum.quran.application.Cnstnt.Companion.PAUSE
-import com.quantum.quran.notification.Foreground
+import com.quantum.quran.notification.F_Ground
 import java.lang.Exception
 
-class AudioService : Service(), MediaPlayer.OnCompletionListener,
+class Aodio_Servi : Service(), MediaPlayer.OnCompletionListener,
     MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener,
     AudioManager.OnAudioFocusChangeListener,
     MediaPlayer.OnSeekCompleteListener, MediaPlayer.OnInfoListener,
@@ -28,8 +28,8 @@ class AudioService : Service(), MediaPlayer.OnCompletionListener,
     private var pauseReceiver: BroadcastReceiver? = null
 
     class LocalBinder : Binder() {
-        val service: AudioService
-            get() = AudioService()
+        val service: Aodio_Servi
+            get() = Aodio_Servi()
     }
 
     private var surah = 0
@@ -91,7 +91,7 @@ class AudioService : Service(), MediaPlayer.OnCompletionListener,
         registerReceiver(startReceiver, IntentFilter(PLAY))
         registerReceiver(pauseReceiver, IntentFilter(PAUSE))
 
-        startForeground(101, Foreground(this).generateForegroundNotification())
+        startForeground(101, F_Ground(this).generateForegroundNotification())
 
         return super.onStartCommand(intent, flags, startId)
     }

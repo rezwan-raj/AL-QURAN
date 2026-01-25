@@ -21,7 +21,7 @@ import com.quantum.quran.R
 import kotlin.math.pow
 
 @SuppressLint("AppCompatCustomView")
-class CircleImageView : ImageView {
+class Circle_Im_V : ImageView {
     private val mDrawableRect = RectF()
     private val mBorderRect = RectF()
     private val mShaderMatrix = Matrix()

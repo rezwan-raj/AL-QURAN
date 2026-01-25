@@ -22,10 +22,10 @@ import com.quantum.quran.constant.Nam
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.FSurahAyatBinding
-import com.quantum.quran.model.Quran
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.utils.KeyboardUtils
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.utils.Keyb_Uti
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -37,11 +37,11 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 
 
-class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Boolean) : Fragment() {
+class Su_R_Ah_Ayt(private val position: Int, val ayat: Int, private val scroll: Boolean) : Fragment() {
 
     private var search = ""
     private lateinit var smoothScroller: RecyclerView.SmoothScroller
-    private val data = ArrayList<Quran>()
+    private val data = ArrayList<`AL-QURAN`>()
     private var ayatFollower: BroadcastReceiver? = null
     private lateinit var layoutManager: LinearLayoutManager
     private var adapterSurah: SurahAyatAdap? = null
@@ -62,11 +62,11 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
         }
 
         CoroutineScope(Dispatchers.Default).launch {
-            data.add(Quran(0, 0, 0, "", "",
+            data.add(`AL-QURAN`(0, 0, 0, "", "",
                     "", "", "", "", "")
             )
-            data.addAll(QuranHelper(requireContext()).readSurahNo(position + 1))
-            val temp = SurahHelper(requireContext()).readData()[position]
+            data.addAll(`Al-Quran_H`(requireContext()).readSurahNo(position + 1))
+            val temp = Su_R_Ah_H(requireContext()).readData()[position]
             val t = "${revelation(temp.revelation)}   |   ${NumberFormat.getInstance(
                 Locale(Application_D(requireContext()).language)).format(temp.verse)}" +
                     "  " + resources.getString(R.string.verses)
@@ -137,10 +137,10 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
         val l = data.size
         data.clear()
         adapterSurah?.notifyItemRangeRemoved(0, l)
-        data.add(Quran(0, 0, 0, "", "",
+        data.add(`AL-QURAN`(0, 0, 0, "", "",
                 "", "", "", "", "")
         )
-        data.addAll(QuranHelper(requireContext()).readSurahNo(position + 1))
+        data.addAll(`Al-Quran_H`(requireContext()).readSurahNo(position + 1))
         adapterSurah?.notifyItemRangeInserted(0, data.size)
         if (pos < data.size) {
             binding?.ayatRecycler?.scrollToPosition(pos)
@@ -151,10 +151,10 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
         adapterSurah?.notifyItemRangeRemoved(0, data.size)
         CoroutineScope(Dispatchers.Default).launch {
             data.clear()
-            data.add(Quran(0, 0, 0, "", "",
+            data.add(`AL-QURAN`(0, 0, 0, "", "",
                 "", "", "", "", "")
             )
-            val a = QuranHelper(requireContext()).readData().filter {
+            val a = `Al-Quran_H`(requireContext()).readData().filter {
                 when(Application_D(requireContext()).translation) {
                     Application_D.TAISIRUL -> it.terjemahan
                     Application_D.MUHIUDDIN -> it.jalalayn
@@ -173,7 +173,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
                         "${temp.substring(start, start+filter.length)}</font></b>${temp.substring(start+filter.length)}"
 
                 data.add(
-                    Quran(
+                    `AL-QURAN`(
                         pos = it.pos,
                         surah = it.surah,
                         ayat = it.ayat,
@@ -202,7 +202,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
     private fun closeKeyboard(edit: EditText?) {
         edit?.let {
             it.clearFocus()
-            KeyboardUtils.hideKeyboard(it)
+            Keyb_Uti.hideKeyboard(it)
         }
     }
 

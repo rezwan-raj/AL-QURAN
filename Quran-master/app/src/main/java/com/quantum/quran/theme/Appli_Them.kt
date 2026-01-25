@@ -5,7 +5,7 @@ import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
 
 
-class ApplicationTheme(context: Activity) {
+class Appli_Them(context: Activity) {
 
     init {
         if (Application_D(context).darkTheme) {

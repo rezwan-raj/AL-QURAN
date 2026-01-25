@@ -50,7 +50,7 @@
         </activity>
 
         <service
-            android:name="com.quantum.quran.services.AudioService"
+            android:name="com.quantum.quran.services.Aodio_Servi"
             android:enabled="true"
             android:exported="false" />
         <meta-data

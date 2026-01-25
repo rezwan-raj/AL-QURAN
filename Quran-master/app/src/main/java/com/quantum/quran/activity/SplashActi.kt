@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.quantum.minar.database.User_D
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,7 +22,7 @@ class SplashActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         setContentView(R.layout.a_splash)
 
         launch()
@@ -45,8 +45,8 @@ class SplashActi : AppCompatActivity() {
     private fun activity(): Class<*> {
         return if (User_D(this@SplashActi).quranLaunched) {
             try {
-                if (SurahHelper(this@SplashActi).readData().size == 114
-                    && QuranHelper(this@SplashActi).readData().size == 6236)
+                if (Su_R_Ah_H(this@SplashActi).readData().size == 114
+                    && `Al-Quran_H`(this@SplashActi).readData().size == 6236)
                     QuranMainActi::class.java
                 else QuranActi::class.java
             } catch (e: Exception) {
@@ -57,7 +57,7 @@ class SplashActi : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }

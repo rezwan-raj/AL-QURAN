@@ -11,8 +11,8 @@ import androidx.core.app.ActivityCompat
 import com.quantum.quran.BuildConfig
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.AAboutBinding
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import java.util.*
 
 class AboutActi : AppCompatActivity() {
@@ -22,7 +22,7 @@ class AboutActi : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         binding = AAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.closeAbout.setOnClickListener { finish() }
@@ -130,7 +130,7 @@ class AboutActi : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }

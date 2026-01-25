@@ -39,7 +39,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.quantum.quran.uiClass.CircleImageView
+                <com.quantum.quran.uiClass.Circle_Im_V
                     android:id="@+id/profile"
                     android:layout_width="48dp"
                     android:layout_height="48dp"

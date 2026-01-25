@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.activity.ParaActi
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.JuzModel
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
+import com.quantum.quran.model.J_Mod
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ParaListAdap(val context: Context, val data: ArrayList<JuzModel>):
+class ParaListAdap(val context: Context, val data: ArrayList<J_Mod>):
     RecyclerView.Adapter<ParaListAdap.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -39,7 +39,7 @@ class ParaListAdap(val context: Context, val data: ArrayList<JuzModel>):
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ParaListAdap.ViewHolder, position: Int) {
         data[position].let {
-            val quran = QuranHelper(context).readAyatNo(it.startPos)!!
+            val quran = `Al-Quran_H`(context).readAyatNo(it.startPos)!!
             holder.run {
                 count.text = numberFormat.format(it.paraNo) //"${it.paraNo}"
                 name.text = "${context.resources.getString(R.string.para)} " +
@@ -47,7 +47,7 @@ class ParaListAdap(val context: Context, val data: ArrayList<JuzModel>):
                             it.endPos+1-it.startPos)} " +
                         context.resources.getString(R.string.verses)
                 from.text = "${context.resources.getString(R.string.starts_at)}: " +
-                        "${SurahHelper(context).readDataAt(quran.surah)!!.name}," +
+                        "${Su_R_Ah_H(context).readDataAt(quran.surah)!!.name}," +
                         " "+context.resources.getString(R.string.verses)+" ${numberFormat.format(quran.ayat)}"
 
                 holder.itemView.setOnClickListener { _->

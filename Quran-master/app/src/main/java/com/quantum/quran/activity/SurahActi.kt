@@ -11,10 +11,10 @@ import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.ASurahBinding
-import com.quantum.quran.fragment.SurahAyat
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.fragment.Su_R_Ah_Ayt
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import java.util.*
 
 class SurahActi : AppCompatActivity() {
@@ -35,7 +35,7 @@ class SurahActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         binding = ASurahBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.back?.setOnClickListener { finish() }
@@ -45,10 +45,10 @@ class SurahActi : AppCompatActivity() {
         binding?.qPager?.adapter = PagerAdap(
             supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ).apply {
-            SurahHelper(this@SurahActi)
+            Su_R_Ah_H(this@SurahActi)
                 .readData().reversed().forEach {
                     addFragment(
-                        SurahAyat(it.pos-1,
+                        Su_R_Ah_Ayt(it.pos-1,
                         intent.getIntExtra("AYAT", 0), it.pos==(surahNo!!+1))
                     )
                     binding?.tabLayout?.newTab()?.setText(it.name)?.let { it1 ->
@@ -74,7 +74,7 @@ class SurahActi : AppCompatActivity() {
 
             override fun onTabSelected(tab: TabLayout.Tab) {
                 binding?.qPager?.currentItem = tab.position
-                SurahHelper(this@SurahActi).readDataAt(114-tab.position)?.let {
+                Su_R_Ah_H(this@SurahActi).readDataAt(114-tab.position)?.let {
                     Lst_Read(this@SurahActi).surahName = it.name
                 }
                 Lst_Read(this@SurahActi).surahNo = 113-tab.position
@@ -82,13 +82,13 @@ class SurahActi : AppCompatActivity() {
         })
 
         binding?.qPager?.offscreenPageLimit = 3
-        binding?.qPager?.currentItem = SurahHelper(this@SurahActi)
+        binding?.qPager?.currentItem = Su_R_Ah_H(this@SurahActi)
             .readData().size - surahNo!!-1
     }
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }

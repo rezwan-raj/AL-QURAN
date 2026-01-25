@@ -16,7 +16,7 @@ import com.quantum.quran.R
 import com.quantum.quran.application.Cnstnt.Companion.PAUSE
 import com.quantum.quran.enum.Play_ba_Stat
 
-class MediaNotification(val activity: Context) {
+class Med_Notifi(val activity: Context) {
 
     companion object {
         const val CHANNEL = "AUDIO"

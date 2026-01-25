@@ -1,6 +1,6 @@
 package com.quantum.quran.model
 
-data class ParaAyat(
+data class Pa_R_Ah_Ay(
     val type: Int,
     val pos: Int,
     val surah: Int,

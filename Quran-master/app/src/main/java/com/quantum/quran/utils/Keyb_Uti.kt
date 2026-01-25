@@ -6,7 +6,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 
-object KeyboardUtils {
+object Keyb_Uti {
     fun hideKeyboard(activity: Activity): Boolean {
         val imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         return run {

@@ -16,8 +16,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.ASettingsBinding
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import java.util.*
 
 class SettingsActi : AppCompatActivity() {
@@ -37,7 +37,7 @@ class SettingsActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         binding = ASettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.back.clipToOutline = true
@@ -305,8 +305,8 @@ class SettingsActi : AppCompatActivity() {
             )
             Objects.requireNonNull(
                 overridePendingTransition(
-                    R.anim.fade_in,
-                    R.anim.fade_out
+                    R.anim.f_in,
+                    R.anim.fa_o
                 )
             )
             finish()
@@ -315,7 +315,7 @@ class SettingsActi : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }

@@ -12,9 +12,9 @@ import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.constant.P
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.databinding.AParaBinding
-import com.quantum.quran.fragment.ParaAyat
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.fragment.Pa_R_a_Ay
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import java.text.NumberFormat
 import java.util.*
 
@@ -34,7 +34,7 @@ class ParaActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         binding = AParaBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.back?.setOnClickListener { finish() }
@@ -46,7 +46,7 @@ class ParaActi : AppCompatActivity() {
         ).apply {
             P().Position().reversed()
                 .forEach {
-                    addFragment(ParaAyat(it.paraNo))
+                    addFragment(Pa_R_a_Ay(it.paraNo))
                     binding?.tabLayout?.newTab()?.setText(
                         resources.getString(R.string.para) +
                             " -> ${numberFormat.format(it.paraNo)}")?.let { it1 ->
@@ -82,7 +82,7 @@ class ParaActi : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }

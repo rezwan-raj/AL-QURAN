@@ -1,6 +1,6 @@
 package com.quantum.quran.model
 
-data class SurahList(
+data class Su_R_Ah_Li(
     val pos: Int,
     val name: String,
     val revelation: String,

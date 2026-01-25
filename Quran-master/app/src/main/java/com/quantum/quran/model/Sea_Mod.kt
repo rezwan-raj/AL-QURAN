@@ -1,6 +1,6 @@
 package com.quantum.quran.model
 
-data class SearchModel(
+data class Sea_Mod(
     val type: Int,
     val pos: Int,
     val name: String = "",

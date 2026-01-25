@@ -1,6 +1,6 @@
 package com.quantum.quran.model
 
-data class Quran(
+data class `AL-QURAN`(
     val pos: Int,
     val surah: Int,
     val ayat: Int,

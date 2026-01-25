@@ -10,7 +10,7 @@ import com.quantum.quran.adapter.ParaListAdap
 import com.quantum.quran.constant.P
 import com.quantum.quran.databinding.FParaBinding
 
-class Para : Fragment() {
+class Pa_R_a : Fragment() {
 
     private var binding: FParaBinding? = null
 

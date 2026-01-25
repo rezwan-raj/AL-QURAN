@@ -17,15 +17,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.activity.SurahActi
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.model.Quran
-import com.quantum.quran.model.SearchModel
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.model.Sea_Mod
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
 
-class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
+class SearchAdap(val context: Context, val data: ArrayList<Sea_Mod>):
     RecyclerView.Adapter<SearchAdap.ViewHolder>() {
 
-    private val quran = QuranHelper(context)
+    private val quran = `Al-Quran_H`(context)
 
     inner class ViewHolder(view: View, viewType: Int): RecyclerView.ViewHolder(view) {
         var count: TextView? = null
@@ -101,7 +101,7 @@ class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
                             pron?.visibility = View.GONE
                         }
 
-                        surahName?.text = SurahHelper(context).readDataAt(it.surah)?.name
+                        surahName?.text = Su_R_Ah_H(context).readDataAt(it.surah)?.name
 
                         translation?.visibility = View.VISIBLE
                         translation?.text = textToHtml(it.trans)
@@ -121,7 +121,7 @@ class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
         share: ImageView?,
         bookmark: ImageView?,
         holder: ViewHolder,
-        it: SearchModel) {
+        it: Sea_Mod) {
         share?.setOnClickListener { v ->
             val sendIntent = Intent()
             sendIntent.action = Intent.ACTION_SEND
@@ -161,8 +161,8 @@ class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
         }
     }
 
-    private fun modelExchange(temp: SearchModel): Quran {
-        return Quran(
+    private fun modelExchange(temp: Sea_Mod): `AL-QURAN` {
+        return `AL-QURAN`(
             pos = temp.pos,
             surah = temp.surah,
             ayat = temp.ayat,

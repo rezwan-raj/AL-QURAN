@@ -14,21 +14,21 @@ import com.quantum.quran.adapter.ParaAyatAdap
 import com.quantum.quran.constant.Nam
 import com.quantum.quran.constant.P
 import com.quantum.quran.databinding.FParaAyatBinding
-import com.quantum.quran.model.ParaAyat
-import com.quantum.quran.model.Quran
-import com.quantum.quran.sql.QuranHelper
-import com.quantum.quran.sql.SurahHelper
-import com.quantum.quran.utils.KeyboardUtils
+import com.quantum.quran.model.Pa_R_Ah_Ay
+import com.quantum.quran.model.`AL-QURAN`
+import com.quantum.quran.sql.`Al-Quran_H`
+import com.quantum.quran.sql.Su_R_Ah_H
+import com.quantum.quran.utils.Keyb_Uti
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ParaAyat(private val position: Int) : Fragment() {
+class Pa_R_a_Ay(private val position: Int) : Fragment() {
 
     private var search = ""
-    private val data = ArrayList<ParaAyat>()
-    private var surahHelper: SurahHelper? = null
-    private var quranHelper: QuranHelper? = null
+    private val data = ArrayList<Pa_R_Ah_Ay>()
+    private var suRAhH: Su_R_Ah_H? = null
+    private var `al-quranH`: `Al-Quran_H`? = null
     private var adapterSurah: ParaAyatAdap? = null
     private var binding: FParaAyatBinding? = null
 
@@ -69,9 +69,9 @@ class ParaAyat(private val position: Int) : Fragment() {
 
     private fun initiate() {
         CoroutineScope(Dispatchers.Default).launch {
-            surahHelper = SurahHelper(requireContext())
-            quranHelper = QuranHelper(requireContext())
-            QuranHelper(requireContext()).readAyatXtoY(
+            suRAhH = Su_R_Ah_H(requireContext())
+            `al-quranH` = `Al-Quran_H`(requireContext())
+            `Al-Quran_H`(requireContext()).readAyatXtoY(
                 P().Position()[position-1].startPos
                 , P().Position()[position-1].endPos
             ).forEach {
@@ -93,7 +93,7 @@ class ParaAyat(private val position: Int) : Fragment() {
         data.clear()
         adapterSurah?.notifyDataSetChanged()
         CoroutineScope(Dispatchers.Default).launch {
-            QuranHelper(requireContext()).readAyatXtoY(
+            `Al-Quran_H`(requireContext()).readAyatXtoY(
                 P().Position()[position - 1].startPos,
                 P().Position()[position - 1].endPos
             ).forEach {
@@ -120,7 +120,7 @@ class ParaAyat(private val position: Int) : Fragment() {
                 data.clear()
                 adapterSurah?.notifyDataSetChanged()
                 CoroutineScope(Dispatchers.Default).launch {
-                    QuranHelper(requireContext()).readAyatXtoY(
+                    `Al-Quran_H`(requireContext()).readAyatXtoY(
                         P().Position()[position - 1].startPos,
                         P().Position()[position - 1].endPos
                     ).forEach {
@@ -141,7 +141,7 @@ class ParaAyat(private val position: Int) : Fragment() {
     private fun filter(pos: Int) {
         data.clear()
         adapterSurah?.notifyDataSetChanged()
-        QuranHelper(requireContext()).readAyatXtoY(
+        `Al-Quran_H`(requireContext()).readAyatXtoY(
             P().Position()[position-1].startPos
             , P().Position()[position-1].endPos
         ).forEach {
@@ -158,14 +158,14 @@ class ParaAyat(private val position: Int) : Fragment() {
     private fun closeKeyboard(edit: EditText?) {
         edit?.let {
             it.clearFocus()
-            KeyboardUtils.hideKeyboard(it)
+            Keyb_Uti.hideKeyboard(it)
         }
     }
 
-    private fun modelExchange(temp: Quran, name: Boolean): ParaAyat {
+    private fun modelExchange(temp: `AL-QURAN`, name: Boolean): Pa_R_Ah_Ay {
         if (name) {
-            val s = surahHelper!!.readDataAt(quranHelper!!.readAyatNo(temp.pos)!!.surah)
-            return ParaAyat(
+            val s = suRAhH!!.readDataAt(`al-quranH`!!.readAyatNo(temp.pos)!!.surah)
+            return Pa_R_Ah_Ay(
                 type = 1,
                 pos = temp.pos,
                 surah = temp.surah,
@@ -182,7 +182,7 @@ class ParaAyat(private val position: Int) : Fragment() {
                 details = "${s.revelation}   |   ${s.verse} VERSES"
             )
         } else {
-            return ParaAyat(
+            return Pa_R_Ah_Ay(
                 type = 0,
                 pos = temp.pos,
                 surah = temp.surah,

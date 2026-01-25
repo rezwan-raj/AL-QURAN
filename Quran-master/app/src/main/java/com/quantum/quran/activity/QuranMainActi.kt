@@ -16,12 +16,12 @@ import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.AQuranMainBinding
-import com.quantum.quran.external.Search
-import com.quantum.quran.fragment.Bookmark
-import com.quantum.quran.fragment.Para
-import com.quantum.quran.fragment.Surah
-import com.quantum.quran.theme.ApplicationTheme
-import com.quantum.quran.utils.ContextUtils
+import com.quantum.quran.external.Srch
+import com.quantum.quran.fragment.B_Mark
+import com.quantum.quran.fragment.Pa_R_a
+import com.quantum.quran.fragment.Su_R_Ah
+import com.quantum.quran.theme.Appli_Them
+import com.quantum.quran.utils.Context_U
 import java.text.NumberFormat
 import java.util.*
 
@@ -48,7 +48,7 @@ class QuranMainActi : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ApplicationTheme(this)
+        Appli_Them(this)
         Application_D(this).run {
             dark = darkTheme
             lang = language
@@ -64,9 +64,9 @@ class QuranMainActi : AppCompatActivity() {
             it.quranPager.adapter = PagerAdap(
                 supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
             ).apply {
-                addFragment(Surah())
-                addFragment(Para())
-                addFragment(Bookmark())
+                addFragment(Su_R_Ah())
+                addFragment(Pa_R_a())
+                addFragment(B_Mark())
             }
             it.quranPager.offscreenPageLimit = 3
             it.tabLayout.tabGravity = TabLayout.GRAVITY_FILL
@@ -86,7 +86,7 @@ class QuranMainActi : AppCompatActivity() {
             })
 
             it.search.setOnClickListener {
-                Search(this).searchSheet()
+                Srch(this).searchSheet()
             }
 
             it.settings.setOnClickListener {
@@ -110,8 +110,8 @@ class QuranMainActi : AppCompatActivity() {
             )
             Objects.requireNonNull(
                 overridePendingTransition(
-                    R.anim.fade_in,
-                    R.anim.fade_out
+                    R.anim.f_in,
+                    R.anim.fa_o
                 )
             )
             finish()
@@ -140,7 +140,7 @@ class QuranMainActi : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val localeToSwitchTo = Locale(Application_D(newBase!!).language)
-        val localeUpdatedContext: ContextWrapper = ContextUtils.updateLocale(newBase, localeToSwitchTo)
+        val localeUpdatedContext: ContextWrapper = Context_U.updateLocale(newBase, localeToSwitchTo)
         super.attachBaseContext(localeUpdatedContext)
     }
 }
