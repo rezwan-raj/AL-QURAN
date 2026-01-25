@@ -14,7 +14,7 @@ import android.support.v4.media.session.MediaSessionCompat
 import androidx.core.app.NotificationCompat
 import com.quantum.quran.R
 import com.quantum.quran.application.Cnstnt.Companion.PAUSE
-import com.quantum.quran.enum.PlaybackStatus
+import com.quantum.quran.enum.Play_ba_Stat
 
 class MediaNotification(val activity: Context) {
 
@@ -27,7 +27,7 @@ class MediaNotification(val activity: Context) {
     private var mediaSession: MediaSessionCompat? = null
     private var transportControls: MediaControllerCompat.TransportControls? = null
 
-    fun buildNotification(playbackStatus: PlaybackStatus) {
+    fun buildNotification(playbaStat: Play_ba_Stat) {
 
         createNotificationChannels()
         initMediaSession()
@@ -37,11 +37,11 @@ class MediaNotification(val activity: Context) {
         var playPauseAction: PendingIntent? = null
 
         //Build a new notification according to the current state of the MediaPlayer
-        if (playbackStatus === PlaybackStatus.PLAYING) {
+        if (playbaStat === Play_ba_Stat.PLAYING) {
             notificationAction = R.drawable.ic_baseline_call_24
             //create the pause action
             playPauseAction = playbackAction(1)
-        } else if (playbackStatus === PlaybackStatus.PAUSED) {
+        } else if (playbaStat === Play_ba_Stat.PAUSED) {
             notificationAction = R.drawable.ic_baseline_call_24
             //create the play action
             playPauseAction = playbackAction(0)
@@ -95,22 +95,22 @@ class MediaNotification(val activity: Context) {
             // Implement callbacks
             override fun onPlay() {
                 super.onPlay()
-                buildNotification(PlaybackStatus.PLAYING)
+                buildNotification(Play_ba_Stat.PLAYING)
             }
 
             override fun onPause() {
                 super.onPause()
-                buildNotification(PlaybackStatus.PAUSED)
+                buildNotification(Play_ba_Stat.PAUSED)
             }
 
             override fun onSkipToNext() {
                 super.onSkipToNext()
-                buildNotification(PlaybackStatus.PLAYING)
+                buildNotification(Play_ba_Stat.PLAYING)
             }
 
             override fun onSkipToPrevious() {
                 super.onSkipToPrevious()
-                buildNotification(PlaybackStatus.PLAYING)
+                buildNotification(Play_ba_Stat.PLAYING)
             }
 
             override fun onStop() {

@@ -1,5 +1,5 @@
 package com.quantum.quran.enum
 
-enum class PlaybackStatus {
+enum class Play_ba_Stat {
     PLAYING, PAUSED
 }
