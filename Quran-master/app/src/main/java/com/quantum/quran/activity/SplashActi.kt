@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.quantum.minar.database.UserData
+import com.quantum.minar.database.User_D
 import com.quantum.quran.R
 import com.quantum.quran.database.Application_D
 import com.quantum.quran.sql.QuranHelper
@@ -43,7 +43,7 @@ class SplashActi : AppCompatActivity() {
     }
 
     private fun activity(): Class<*> {
-        return if (UserData(this@SplashActi).quranLaunched) {
+        return if (User_D(this@SplashActi).quranLaunched) {
             try {
                 if (SurahHelper(this@SplashActi).readData().size == 114
                     && QuranHelper(this@SplashActi).readData().size == 6236)

@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
 import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.database.LastRead
+import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.AQuranMainBinding
 import com.quantum.quran.external.Search
 import com.quantum.quran.fragment.Bookmark
@@ -122,7 +122,7 @@ class QuranMainActi : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding?.let {
-            LastRead(this).let { last->
+            Lst_Read(this).let { last->
                 it.surahName.text = resources.getStringArray(R.array.surah_name)[last.surahNo] //last.surahName
                 it.ayahNo.text =
                     if (last.ayatNo == 0) "${resources.getString(R.string.ayat_no)}: " +

@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.database.LastRead
+import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.ASurahBinding
 import com.quantum.quran.fragment.SurahAyat
 import com.quantum.quran.sql.SurahHelper
@@ -75,9 +75,9 @@ class SurahActi : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 binding?.qPager?.currentItem = tab.position
                 SurahHelper(this@SurahActi).readDataAt(114-tab.position)?.let {
-                    LastRead(this@SurahActi).surahName = it.name
+                    Lst_Read(this@SurahActi).surahName = it.name
                 }
-                LastRead(this@SurahActi).surahNo = 113-tab.position
+                Lst_Read(this@SurahActi).surahNo = 113-tab.position
             }
         })
 

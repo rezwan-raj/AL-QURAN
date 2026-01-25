@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.quantum.quran.databinding.AQuranBinding
-import com.quantum.minar.database.UserData
+import com.quantum.minar.database.User_D
 import com.quantum.quran.theme.ApplicationTheme
 import java.io.FileOutputStream
 import java.io.IOException
@@ -31,7 +31,7 @@ class QuranActi : AppCompatActivity() {
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-            UserData(this).quranLaunched = true
+            User_D(this).quranLaunched = true
             finish()
         }
     }

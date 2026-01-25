@@ -2,7 +2,7 @@ package com.quantum.quran.database
 
 import android.content.Context
 
-class LocationData(val context: Context) {
+class Loc_Data(val context: Context) {
 
     companion object {
         private const val DATA_NAME = "LOCATION_DATA"

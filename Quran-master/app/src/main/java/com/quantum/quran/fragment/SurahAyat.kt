@@ -20,7 +20,7 @@ import com.quantum.quran.adapter.SurahAyatAdap
 import com.quantum.quran.application.Cnstnt
 import com.quantum.quran.constant.Nam
 import com.quantum.quran.database.Application_D
-import com.quantum.quran.database.LastRead
+import com.quantum.quran.database.Lst_Read
 import com.quantum.quran.databinding.FSurahAyatBinding
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
@@ -225,8 +225,8 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
 
     override fun onPause() {
         activity?.unregisterReceiver(ayatFollower)
-        if (LastRead(requireContext()).surahNo == position) {
-            LastRead(requireContext()).ayatNo =
+        if (Lst_Read(requireContext()).surahNo == position) {
+            Lst_Read(requireContext()).ayatNo =
                 layoutManager.findFirstCompletelyVisibleItemPosition().let {
                     if (it < 0)
                         layoutManager.findFirstVisibleItemPosition()

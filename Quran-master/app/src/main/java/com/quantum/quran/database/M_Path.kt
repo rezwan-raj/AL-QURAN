@@ -2,7 +2,7 @@ package com.quantum.quran.database
 
 import android.content.Context
 
-class MediaPath(val context: Context) {
+class M_Path(val context: Context) {
 
     companion object {
         private const val DATA_NAME = "MEDIA_DATA"
