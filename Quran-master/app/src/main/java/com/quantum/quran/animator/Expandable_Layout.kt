@@ -14,7 +14,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.quantum.quran.R
 import kotlin.math.roundToInt
 
-class ExpandableLayout @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null) :
+class Expandable_Layout @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null) :
     FrameLayout(
         context!!, attrs
     ) {

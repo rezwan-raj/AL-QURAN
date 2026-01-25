@@ -2,7 +2,7 @@ package com.quantum.quran.animator.util
 
 import android.view.animation.Interpolator
 
-abstract class LookupTableInterpolator(private val mValues: FloatArray) : Interpolator {
+abstract class Look_up_Tble_Interpolator(private val mValues: FloatArray) : Interpolator {
     private val mStepSize: Float = 1f / (mValues.size - 1)
     override fun getInterpolation(input: Float): Float {
         if (input >= 1.0f) {

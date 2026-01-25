@@ -1,6 +1,6 @@
 package com.quantum.quran.animator.util
 
-class FastOutSlowInInterpolator : LookupTableInterpolator(floatArrayOf(
+class Fst_Out_Slow_In_Interpolator : Look_up_Tble_Interpolator(floatArrayOf(
     0.0000f, 0.0001f, 0.0002f, 0.0005f, 0.0009f, 0.0014f, 0.0020f,
     0.0027f, 0.0036f, 0.0046f, 0.0058f, 0.0071f, 0.0085f, 0.0101f,
     0.0118f, 0.0137f, 0.0158f, 0.0180f, 0.0205f, 0.0231f, 0.0259f,

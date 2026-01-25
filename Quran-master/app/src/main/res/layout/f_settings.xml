@@ -469,7 +469,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.quantum.quran.animator.ExpandableLayout
+        <com.quantum.quran.animator.Expandable_Layout
             android:id="@+id/translation_expandable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -517,7 +517,7 @@
 
             </HorizontalScrollView>
 
-        </com.quantum.quran.animator.ExpandableLayout>
+        </com.quantum.quran.animator.Expandable_Layout>
 
         <View
             android:layout_width="match_parent"
@@ -573,7 +573,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.quantum.quran.animator.ExpandableLayout
+        <com.quantum.quran.animator.Expandable_Layout
             android:id="@+id/font_size_expandable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -716,7 +716,7 @@
 
             </LinearLayout>
 
-        </com.quantum.quran.animator.ExpandableLayout>
+        </com.quantum.quran.animator.Expandable_Layout>
 
         <TextView
             android:layout_width="wrap_content"
