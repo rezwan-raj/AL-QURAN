@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
-import com.quantum.quran.activity.SurahActivity
+import com.quantum.quran.activity.SurahActi
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.model.SurahList
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SurahListAdapter(val context: Context, val data: ArrayList<SurahList>):
-    RecyclerView.Adapter<SurahListAdapter.ViewHolder>() {
+class SurahListAdap(val context: Context, val data: ArrayList<SurahList>):
+    RecyclerView.Adapter<SurahListAdap.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val count: TextView = view.findViewById(R.id.count)
@@ -26,7 +26,7 @@ class SurahListAdapter(val context: Context, val data: ArrayList<SurahList>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            SurahListAdapter.ViewHolder {
+            SurahListAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -37,7 +37,7 @@ class SurahListAdapter(val context: Context, val data: ArrayList<SurahList>):
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: SurahListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SurahListAdap.ViewHolder, position: Int) {
         holder.count.text = numberFormat.format(data[position].pos)//data[position].pos.toString()
         holder.name.text = data[position].name
         holder.from.text = "${revelation(data[position].revelation)}   |   " +
@@ -45,7 +45,7 @@ class SurahListAdapter(val context: Context, val data: ArrayList<SurahList>):
         holder.arabic.text = data[position].nameAr
 
         holder.itemView.setOnClickListener {
-            SurahActivity.launch(context, position, 0)
+            SurahActi.launch(context, position, 0)
         }
     }
 

@@ -16,7 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quantum.quran.R
-import com.quantum.quran.adapter.SurahAyatAdapter
+import com.quantum.quran.adapter.SurahAyatAdap
 import com.quantum.quran.application.Constant
 import com.quantum.quran.constant.Name
 import com.quantum.quran.database.ApplicationData
@@ -44,7 +44,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
     private val data = ArrayList<Quran>()
     private var ayatFollower: BroadcastReceiver? = null
     private lateinit var layoutManager: LinearLayoutManager
-    private var adapterSurah: SurahAyatAdapter? = null
+    private var adapterSurah: SurahAyatAdap? = null
     private var binding: FSurahAyatBinding? = null
 
     override fun onCreateView(
@@ -70,7 +70,7 @@ class SurahAyat(private val position: Int, val ayat: Int, private val scroll: Bo
             val t = "${revelation(temp.revelation)}   |   ${NumberFormat.getInstance(
                 Locale(ApplicationData(requireContext()).language)).format(temp.verse)}" +
                     "  " + resources.getString(R.string.verses)
-            adapterSurah = SurahAyatAdapter(
+            adapterSurah = SurahAyatAdap(
                 requireContext(),
                 temp.name, Name().data()[position],
                 t, data

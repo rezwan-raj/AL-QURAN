@@ -20,7 +20,7 @@ import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
 import java.util.*
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActi : AppCompatActivity() {
 
     private lateinit var applicationData: ApplicationData
     private lateinit var binding: ASettingsBinding
@@ -51,7 +51,7 @@ class SettingsActivity : AppCompatActivity() {
         applicationData = ApplicationData(this)
 
         binding.language.setOnClickListener {
-            startForResult.launch(Intent(this, LanguageActivity::class.java))
+            startForResult.launch(Intent(this, LanguageActi::class.java))
         }
 
         binding.openFont.setOnClickListener {
@@ -300,7 +300,7 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this,
-                    SettingsActivity::class.java
+                    SettingsActi::class.java
                 )
             )
             Objects.requireNonNull(

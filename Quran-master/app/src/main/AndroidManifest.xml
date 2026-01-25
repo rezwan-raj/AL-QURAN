@@ -27,20 +27,20 @@
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
         <activity
-            android:name="com.quantum.quran.activity.LanguageActivity"
+            android:name="com.quantum.quran.activity.LanguageActi"
             android:exported="true" />
-        <activity android:name="com.quantum.quran.activity.AboutActivity" />
-        <activity android:name="com.quantum.quran.activity.SettingsActivity" />
-        <activity android:name="com.quantum.quran.activity.ParaActivity" />
-        <activity android:name="com.quantum.quran.activity.QuranMainActivity" />
-        <activity android:name="com.quantum.quran.activity.QuranActivity" />
+        <activity android:name="com.quantum.quran.activity.AboutActi" />
+        <activity android:name="com.quantum.quran.activity.SettingsActi" />
+        <activity android:name="com.quantum.quran.activity.ParaActi" />
+        <activity android:name="com.quantum.quran.activity.QuranMainActi" />
+        <activity android:name="com.quantum.quran.activity.QuranActi" />
         <activity
-            android:name="com.quantum.quran.activity.SurahActivity"
+            android:name="com.quantum.quran.activity.SurahActi"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.quantum.quran.activity.SplashActivity"
+            android:name="com.quantum.quran.activity.SplashActi"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

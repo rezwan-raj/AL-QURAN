@@ -8,7 +8,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
-import com.quantum.quran.adapter.PagerAdapter
+import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.constant.Para
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.databinding.AParaBinding
@@ -18,14 +18,14 @@ import com.quantum.quran.utils.ContextUtils
 import java.text.NumberFormat
 import java.util.*
 
-class ParaActivity : AppCompatActivity() {
+class ParaActi : AppCompatActivity() {
 
     companion object {
         fun launch(context: Context, paraNo: Int) {
             context.startActivity(
                 Intent(
                     context,
-                    ParaActivity::class.java
+                    ParaActi::class.java
                 ).putExtra("PARA_NO", paraNo)
             )
         }
@@ -41,7 +41,7 @@ class ParaActivity : AppCompatActivity() {
 
         val numberFormat: NumberFormat =
             NumberFormat.getInstance(Locale(ApplicationData(this).language))
-        binding?.qPager?.adapter = PagerAdapter(
+        binding?.qPager?.adapter = PagerAdap(
             supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ).apply {
             Para().Position().reversed()

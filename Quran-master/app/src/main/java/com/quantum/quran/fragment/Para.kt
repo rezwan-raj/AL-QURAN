@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.quantum.quran.adapter.ParaListAdapter
+import com.quantum.quran.adapter.ParaListAdap
 import com.quantum.quran.constant.Para
 import com.quantum.quran.databinding.FParaBinding
 
@@ -20,7 +20,7 @@ class Para : Fragment() {
         binding = FParaBinding.inflate(inflater, container, false)
 
         binding?.paraRecycler?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.paraRecycler?.adapter = ParaListAdapter(
+        binding?.paraRecycler?.adapter = ParaListAdap(
             requireContext(), Para().Position()
         )
 

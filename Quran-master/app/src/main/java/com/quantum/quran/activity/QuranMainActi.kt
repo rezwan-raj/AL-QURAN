@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.quantum.quran.R
-import com.quantum.quran.adapter.PagerAdapter
+import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.AQuranMainBinding
@@ -25,7 +25,7 @@ import com.quantum.quran.utils.ContextUtils
 import java.text.NumberFormat
 import java.util.*
 
-class QuranMainActivity : AppCompatActivity() {
+class QuranMainActi : AppCompatActivity() {
 
     private var lang = ""
     private var dark = false
@@ -61,7 +61,7 @@ class QuranMainActivity : AppCompatActivity() {
             it.headerCard.clipToOutline = true
             it.back.setOnClickListener { finish() }
 
-            it.quranPager.adapter = PagerAdapter(
+            it.quranPager.adapter = PagerAdap(
                 supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
             ).apply {
                 addFragment(Surah())
@@ -93,7 +93,7 @@ class QuranMainActivity : AppCompatActivity() {
                 startForResult.launch(
                     Intent(
                         this,
-                        SettingsActivity::class.java
+                        SettingsActi::class.java
                     )
                 )
             }
@@ -105,7 +105,7 @@ class QuranMainActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this,
-                    QuranMainActivity::class.java
+                    QuranMainActi::class.java
                 )
             )
             Objects.requireNonNull(
@@ -132,7 +132,7 @@ class QuranMainActivity : AppCompatActivity() {
                             NumberFormat.getInstance(Locale(ApplicationData(this)
                                 .language)).format(last.ayatNo)
                 it.headerCard.setOnClickListener { _ ->
-                    SurahActivity.launch(this, last.surahNo, last.ayatNo)
+                    SurahActi.launch(this, last.surahNo, last.ayatNo)
                 }
             }
         }

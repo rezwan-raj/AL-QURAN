@@ -15,15 +15,15 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
 import com.quantum.quran.`interface`.Bookmark
-import com.quantum.quran.activity.SurahActivity
+import com.quantum.quran.activity.SurahActi
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.model.Quran
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
 
-class BookmarkAdapter(val context: Context, val data: ArrayList<Quran>,
-                      private val bookmarkInterface: Bookmark)
-    : RecyclerView.Adapter<BookmarkAdapter.ViewHolder>() {
+class BookmarkAdap(val context: Context, val data: ArrayList<Quran>,
+                   private val bookmarkInterface: Bookmark)
+    : RecyclerView.Adapter<BookmarkAdap.ViewHolder>() {
 
     private val quran = QuranHelper(context)
 
@@ -53,7 +53,7 @@ class BookmarkAdapter(val context: Context, val data: ArrayList<Quran>,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookmarkAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookmarkAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -63,7 +63,7 @@ class BookmarkAdapter(val context: Context, val data: ArrayList<Quran>,
         )
     }
 
-    override fun onBindViewHolder(holder: BookmarkAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookmarkAdap.ViewHolder, position: Int) {
         data[position].let {
             holder.run {
                 ayatNo?.text = it.ayat.toString()
@@ -115,7 +115,7 @@ class BookmarkAdapter(val context: Context, val data: ArrayList<Quran>,
                 }
 
                 holder.itemView.setOnClickListener { _->
-                    SurahActivity.launch(context, it.surah-1, it.ayat)
+                    SurahActi.launch(context, it.surah-1, it.ayat)
                 }
 
 

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
-import com.quantum.quran.activity.ParaActivity
+import com.quantum.quran.activity.ParaActi
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.model.JuzModel
 import com.quantum.quran.sql.QuranHelper
@@ -17,8 +17,8 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ParaListAdapter(val context: Context, val data: ArrayList<JuzModel>):
-    RecyclerView.Adapter<ParaListAdapter.ViewHolder>() {
+class ParaListAdap(val context: Context, val data: ArrayList<JuzModel>):
+    RecyclerView.Adapter<ParaListAdap.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.name)
@@ -26,7 +26,7 @@ class ParaListAdapter(val context: Context, val data: ArrayList<JuzModel>):
         val count: TextView = view.findViewById(R.id.count)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParaListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParaListAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -37,7 +37,7 @@ class ParaListAdapter(val context: Context, val data: ArrayList<JuzModel>):
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: ParaListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ParaListAdap.ViewHolder, position: Int) {
         data[position].let {
             val quran = QuranHelper(context).readAyatNo(it.startPos)!!
             holder.run {
@@ -51,7 +51,7 @@ class ParaListAdapter(val context: Context, val data: ArrayList<JuzModel>):
                         " "+context.resources.getString(R.string.verses)+" ${numberFormat.format(quran.ayat)}"
 
                 holder.itemView.setOnClickListener { _->
-                    ParaActivity.launch(context, it.paraNo)
+                    ParaActi.launch(context, it.paraNo)
                 }
             }
         }

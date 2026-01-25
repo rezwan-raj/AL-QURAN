@@ -15,15 +15,15 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.quantum.quran.R
-import com.quantum.quran.activity.SurahActivity
+import com.quantum.quran.activity.SurahActi
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.model.Quran
 import com.quantum.quran.model.SearchModel
 import com.quantum.quran.sql.QuranHelper
 import com.quantum.quran.sql.SurahHelper
 
-class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
-    RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchAdap(val context: Context, val data: ArrayList<SearchModel>):
+    RecyclerView.Adapter<SearchAdap.ViewHolder>() {
 
     private val quran = QuranHelper(context)
 
@@ -62,7 +62,7 @@ class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -75,7 +75,7 @@ class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: SearchAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchAdap.ViewHolder, position: Int) {
         when(getItemViewType(position)) {
             SURAH -> {
                 holder.count?.text = data[position].pos.toString()
@@ -84,7 +84,7 @@ class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
                 holder.arabic?.text = data[position].nameAr
 
                 holder.itemView.setOnClickListener {
-                    SurahActivity.launch(context, data[position].pos-1, 0)
+                    SurahActi.launch(context, data[position].pos-1, 0)
                 }
             }
             else -> {
@@ -157,7 +157,7 @@ class SearchAdapter(val context: Context, val data: ArrayList<SearchModel>):
         }
 
         holder.itemView.setOnClickListener { _ ->
-            SurahActivity.launch(context, it.surah - 1, it.ayat)
+            SurahActi.launch(context, it.surah - 1, it.ayat)
         }
     }
 

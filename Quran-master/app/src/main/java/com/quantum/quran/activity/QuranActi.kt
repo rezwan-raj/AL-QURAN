@@ -9,9 +9,8 @@ import com.quantum.quran.theme.ApplicationTheme
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
-import java.util.*
 
-class QuranActivity : AppCompatActivity() {
+class QuranActi : AppCompatActivity() {
     private var binding: AQuranBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +22,7 @@ class QuranActivity : AppCompatActivity() {
         binding?.quranStart?.setOnClickListener {
             startActivity(
                 Intent(
-                    this, QuranMainActivity::class.java
+                    this, QuranMainActi::class.java
                 )
             )
             try {

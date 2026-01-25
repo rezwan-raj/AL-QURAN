@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.quantum.quran.adapter.ParaAyatAdapter
+import com.quantum.quran.adapter.ParaAyatAdap
 import com.quantum.quran.constant.Name
 import com.quantum.quran.constant.Para
 import com.quantum.quran.databinding.FParaAyatBinding
@@ -29,7 +29,7 @@ class ParaAyat(private val position: Int) : Fragment() {
     private val data = ArrayList<ParaAyat>()
     private var surahHelper: SurahHelper? = null
     private var quranHelper: QuranHelper? = null
-    private var adapterSurah: ParaAyatAdapter? = null
+    private var adapterSurah: ParaAyatAdap? = null
     private var binding: FParaAyatBinding? = null
 
     override fun onCreateView(
@@ -79,7 +79,7 @@ class ParaAyat(private val position: Int) : Fragment() {
                     data.add(modelExchange(it, true))
                 data.add(modelExchange(it, false))
             }
-            adapterSurah = ParaAyatAdapter(
+            adapterSurah = ParaAyatAdap(
                 requireContext(), data
             )
             activity?.runOnUiThread {

@@ -21,8 +21,8 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ParaAyatAdapter(val context: Context, val data: ArrayList<ParaAyat>)
-    : RecyclerView.Adapter<ParaAyatAdapter.ViewHolder>() {
+class ParaAyatAdap(val context: Context, val data: ArrayList<ParaAyat>)
+    : RecyclerView.Adapter<ParaAyatAdap.ViewHolder>() {
 
     companion object {
         const val BISMILLAH = 1
@@ -68,7 +68,7 @@ class ParaAyatAdapter(val context: Context, val data: ArrayList<ParaAyat>)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            ParaAyatAdapter.ViewHolder {
+            ParaAyatAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -80,7 +80,7 @@ class ParaAyatAdapter(val context: Context, val data: ArrayList<ParaAyat>)
         )
     }
 
-    override fun onBindViewHolder(holder: ParaAyatAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ParaAyatAdap.ViewHolder, position: Int) {
             data[position].let {
                 if (data[position].type == DEFAULT) {
                     holder.run {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.quantum.quran.R
-import com.quantum.quran.adapter.SearchAdapter
+import com.quantum.quran.adapter.SearchAdap
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.model.SearchModel
 import com.quantum.quran.sql.QuranHelper
@@ -28,7 +28,7 @@ class Search(val context: Activity) {
 
     private var search = ""
     private var option: RadioGroup? = null
-    private var adapter: SearchAdapter? = null
+    private var adapter: SearchAdap? = null
     private var searching: ProgressBar? = null
     private val data = ArrayList<SearchModel>()
     private var recyclerView: RecyclerView? = null
@@ -51,7 +51,7 @@ class Search(val context: Activity) {
 //            bottomSheetDialog.findViewById<BlurView>(R.id.blurView)?.clipToOutline = true
             bottomSheetDialog.findViewById<ImageView>(R.id.search_icon)?.clipToOutline = true
 
-            adapter = SearchAdapter(context, data)
+            adapter = SearchAdap(context, data)
             bottomSheetDialog.findViewById<RecyclerView>(R.id.search_recycler)
                 ?.let { r->
                     r.layoutManager = LinearLayoutManager(context)
@@ -162,7 +162,7 @@ class Search(val context: Activity) {
                     a.forEach {
                         data.add(
                             SearchModel(
-                                type = SearchAdapter.SURAH,
+                                type = SearchAdap.SURAH,
                                 pos = it.pos,
                                 name = it.name,
                                 revelation = it.revelation,
@@ -179,7 +179,7 @@ class Search(val context: Activity) {
                     a.forEach {
                         data.add(
                             SearchModel(
-                                type = SearchAdapter.AYAT,
+                                type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
                                 ayat = it.ayat,
@@ -223,7 +223,7 @@ class Search(val context: Activity) {
                     a.forEach {
                         data.add(
                             SearchModel(
-                                type = SearchAdapter.SURAH,
+                                type = SearchAdap.SURAH,
                                 pos = it.pos,
                                 name = it.name,
                                 revelation = it.revelation,
@@ -245,7 +245,7 @@ class Search(val context: Activity) {
                                 "$filter</font></b>${temp.substring(start+filter.length)}"
                         data.add(
                             SearchModel(
-                                type = SearchAdapter.AYAT,
+                                type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
                                 ayat = it.ayat,
@@ -284,7 +284,7 @@ class Search(val context: Activity) {
                                 "${temp.substring(start, start+filter.length)}</font></b>${temp.substring(start+filter.length)}"
                         data.add(
                             SearchModel(
-                                type = SearchAdapter.AYAT,
+                                type = SearchAdap.AYAT,
                                 pos = it.pos,
                                 surah = it.surah,
                                 ayat = it.ayat,

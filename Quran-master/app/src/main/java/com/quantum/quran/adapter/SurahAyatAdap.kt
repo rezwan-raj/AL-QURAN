@@ -24,9 +24,9 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SurahAyatAdapter(val context: Context, val name: String, val meaning: String,
-                       private val details: String, val data: ArrayList<Quran>):
-    RecyclerView.Adapter<SurahAyatAdapter.ViewHolder>() {
+class SurahAyatAdap(val context: Context, val name: String, val meaning: String,
+                    private val details: String, val data: ArrayList<Quran>):
+    RecyclerView.Adapter<SurahAyatAdap.ViewHolder>() {
 
     private var reading = -1
     private val quran = QuranHelper(context)
@@ -65,7 +65,7 @@ class SurahAyatAdapter(val context: Context, val name: String, val meaning: Stri
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SurahAyatAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SurahAyatAdap.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context)
                 .inflate(
@@ -81,7 +81,7 @@ class SurahAyatAdapter(val context: Context, val name: String, val meaning: Stri
         )
     }
 
-    override fun onBindViewHolder(holder: SurahAyatAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SurahAyatAdap.ViewHolder, position: Int) {
         if (getItemViewType(position) > 0) {
             data[position].let {
                 holder.run {

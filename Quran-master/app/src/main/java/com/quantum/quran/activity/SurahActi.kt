@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
-import com.quantum.quran.adapter.PagerAdapter
+import com.quantum.quran.adapter.PagerAdap
 import com.quantum.quran.database.ApplicationData
 import com.quantum.quran.database.LastRead
 import com.quantum.quran.databinding.ASurahBinding
@@ -17,14 +17,14 @@ import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
 import java.util.*
 
-class SurahActivity : AppCompatActivity() {
+class SurahActi : AppCompatActivity() {
 
     companion object {
         fun launch(context: Context, surahNo: Int, ayat: Int?) {
             context.startActivity(
                 Intent(
                     context,
-                    SurahActivity::class.java
+                    SurahActi::class.java
                 ).putExtra("SURAH_NO", surahNo)
                     .putExtra("AYAT", ayat)
             )
@@ -42,10 +42,10 @@ class SurahActivity : AppCompatActivity() {
 
         surahNo = intent.getIntExtra("SURAH_NO", 0)
 
-        binding?.qPager?.adapter = PagerAdapter(
+        binding?.qPager?.adapter = PagerAdap(
             supportFragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         ).apply {
-            SurahHelper(this@SurahActivity)
+            SurahHelper(this@SurahActi)
                 .readData().reversed().forEach {
                     addFragment(
                         SurahAyat(it.pos-1,
@@ -74,15 +74,15 @@ class SurahActivity : AppCompatActivity() {
 
             override fun onTabSelected(tab: TabLayout.Tab) {
                 binding?.qPager?.currentItem = tab.position
-                SurahHelper(this@SurahActivity).readDataAt(114-tab.position)?.let {
-                    LastRead(this@SurahActivity).surahName = it.name
+                SurahHelper(this@SurahActi).readDataAt(114-tab.position)?.let {
+                    LastRead(this@SurahActi).surahName = it.name
                 }
-                LastRead(this@SurahActivity).surahNo = 113-tab.position
+                LastRead(this@SurahActi).surahNo = 113-tab.position
             }
         })
 
         binding?.qPager?.offscreenPageLimit = 3
-        binding?.qPager?.currentItem = SurahHelper(this@SurahActivity)
+        binding?.qPager?.currentItem = SurahHelper(this@SurahActi)
             .readData().size - surahNo!!-1
     }
 

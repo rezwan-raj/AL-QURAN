@@ -15,11 +15,10 @@ import com.quantum.quran.utils.ContextUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.*
 import java.lang.Exception
 import java.util.*
 
-class SplashActivity : AppCompatActivity() {
+class SplashActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +33,7 @@ class SplashActivity : AppCompatActivity() {
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(
                     Intent(
-                        this@SplashActivity,
+                        this@SplashActi,
                         activity()
                     )
                 )
@@ -44,16 +43,16 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun activity(): Class<*> {
-        return if (UserData(this@SplashActivity).quranLaunched) {
+        return if (UserData(this@SplashActi).quranLaunched) {
             try {
-                if (SurahHelper(this@SplashActivity).readData().size == 114
-                    && QuranHelper(this@SplashActivity).readData().size == 6236)
-                    QuranMainActivity::class.java
-                else QuranActivity::class.java
+                if (SurahHelper(this@SplashActi).readData().size == 114
+                    && QuranHelper(this@SplashActi).readData().size == 6236)
+                    QuranMainActi::class.java
+                else QuranActi::class.java
             } catch (e: Exception) {
-                QuranActivity::class.java
+                QuranActi::class.java
             }
-        } else QuranActivity::class.java
+        } else QuranActi::class.java
     }
 
     override fun attachBaseContext(newBase: Context?) {

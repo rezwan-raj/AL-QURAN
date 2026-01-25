@@ -13,7 +13,7 @@ import com.quantum.quran.theme.ApplicationTheme
 import com.quantum.quran.utils.ContextUtils
 import java.util.*
 
-class LanguageActivity : AppCompatActivity() {
+class LanguageActi : AppCompatActivity() {
 
     private lateinit var binding: ALanguageBinding
 
