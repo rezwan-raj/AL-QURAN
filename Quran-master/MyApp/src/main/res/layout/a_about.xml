@@ -59,7 +59,7 @@
             android:background="#BF919191"
             android:layout_marginTop="8dp"/>
 
-        <com.quantum.quran.uiClass.Circle_Im_V
+        <com.quantum.alquran.uiClass.Circle_Im_V
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="8dp"
