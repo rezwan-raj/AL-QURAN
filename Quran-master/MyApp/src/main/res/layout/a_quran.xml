@@ -6,14 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.QuranActi">
+    tools:context=".acti.QuranActi">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pop_p_ins_poppins_bold"
-        android:text="AL-QURAN"
+        android:text="Al-Quran"
         android:textSize="@dimen/_24sdp"
         android:layout_marginTop="16dp"
         android:textColor="@color/purple"
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/op_en_open_sans"
-        android:text="আল কুরআন-উচ্চারণ অর্থসহ"
+        android:text="আল কুরআন-উচ্চারণ ও অর্থসহ"
 
         android:textAlignment="center"
         android:textColor="#F57F17"
@@ -70,7 +70,7 @@
             android:layout_gravity="center"
             android:text="Get Started"
             android:textAllCaps="false"
-            android:textColor="#F57F17"
+            android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:backgroundTint="@color/purple"
             app:cornerRadius="26dp" />

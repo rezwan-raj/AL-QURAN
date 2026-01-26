@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.quantum.alquran">
+    package="com.quantum.codingburg">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -20,27 +20,27 @@
         android:allowBackup="true"
         android:fullBackupContent="@xml/ba_c_kup_descrip"
         android:icon="@mipmap/iicc_ic_laun_cher"
-        android:label="AL-QURAN আল-কুরআন উচ্চারণ ও অর্থসহ"
+        android:label="Al-Quran "
         android:roundIcon="@mipmap/iicc_ic_laun_cher_rou_nd"
         android:supportsRtl="true"
         android:theme="@style/ThemeLightPurple"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
         <activity
-            android:name="com.quantum.alquran.activity.LanguageActi"
+            android:name="com.quantum.codingburg.acti.LanguageActi"
             android:exported="true" />
-        <activity android:name="com.quantum.alquran.activity.AboutActi" />
-        <activity android:name="com.quantum.alquran.activity.SettingsActi" />
-        <activity android:name="com.quantum.alquran.activity.ParaActi" />
-        <activity android:name="com.quantum.alquran.activity.QuranMainActi" />
-        <activity android:name="com.quantum.alquran.activity.QuranActi" />
+        <activity android:name="com.quantum.codingburg.acti.AboutActi" />
+        <activity android:name="com.quantum.codingburg.acti.SettingsActi" />
+        <activity android:name="com.quantum.codingburg.acti.ParaActi" />
+        <activity android:name="com.quantum.codingburg.acti.QuranMainActi" />
+        <activity android:name="com.quantum.codingburg.acti.QuranActi" />
         <activity
-            android:name="com.quantum.alquran.activity.SurahActi"
+            android:name="com.quantum.codingburg.acti.SurahActi"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.quantum.alquran.activity.SplashActi"
+            android:name="com.quantum.codingburg.acti.SplashActi"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,7 +50,7 @@
         </activity>
 
         <service
-            android:name="com.quantum.alquran.services.Aodio_Servi"
+            android:name="com.quantum.codingburg.appservices.Aodio_Servi"
             android:enabled="true"
             android:exported="false" />
         <meta-data

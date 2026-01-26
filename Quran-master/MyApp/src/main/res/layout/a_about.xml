@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AboutActi"
+    tools:context=".acti.AboutActi"
     tools:ignore="HardcodedText, ContentDescription">
 
     <LinearLayout
@@ -59,11 +59,11 @@
             android:background="#BF919191"
             android:layout_marginTop="8dp"/>
 
-        <com.quantum.alquran.uiClass.Circle_Im_V
+        <com.quantum.codingburg.appuiClass.Circle_Im_V
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/logo1"
+            android:src="@drawable/logo2"
             android:layout_gravity="center"/>
 
         <View
@@ -110,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REZWAN AHMED RAJ"
+            android:text="codingBurg"
             android:textColor="@color/purple"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/com_fortaa_bold_b_o_ld"

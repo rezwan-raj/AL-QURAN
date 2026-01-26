@@ -1,9 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.firebase-perf'
-    id 'com.google.firebase.crashlytics'
+
 }
 
 android {
@@ -11,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.quantum.quran"
+        applicationId "com.quantum.codingburg"
         minSdkVersion 22
         targetSdkVersion 33
         versionCode 8
@@ -62,12 +60,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
 
-    //Firebase
-    implementation platform('com.google.firebase:firebase-bom:28.2.1')
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-perf-ktx'
-    implementation 'com.google.firebase:firebase-database-ktx'
 
     //Blur
 //    implementation 'com.eightbitlab:blurview:1.6.6'
